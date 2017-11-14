@@ -9,6 +9,18 @@
   </head>
 
   <body>
+
+    <header>
+      <div class="header-logo">
+        <%= link_to("TweetApp", "/") %>
+      </div>
+      <ul class="header-menus">
+        <li>
+          <%= link_to("ログイン", "/signup") %>
+        </li>
+      </ul>
+    </header>
+
     <%= yield %>
   </body>
 </html>
