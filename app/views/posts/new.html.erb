@@ -2,9 +2,9 @@
   <div class="container">
     <%= form_tag("/posts/create") do %>
       <h3>タイトル</h3>
-      <input name="title" class="input-tag">
+      <input name="title" class="form-control">
       <h3>記事</h3>
-      <textarea name="content" rows="8" cols="80" class="text-form"></textarea>
+      <textarea name="content" rows="8" cols="80" class="form-control"></textarea>
       <input type="submit" value="投稿">
     <% end %>
   </div>
