@@ -1,0 +1,7 @@
+.main.posts-index
+  .container
+    - @posts.each do |post|
+      .posts-index-item
+        h2
+          = link_to(post.title, "/posts/#{post.id}")
+        hr

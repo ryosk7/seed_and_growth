@@ -1,0 +1,20 @@
+.main.posts-new
+  .container
+    h1
+      | 投稿する
+    hr
+    = form_tag("/posts/create") do
+      - @post.errors.full_messages.each do |message|
+        .form-error
+          = message
+      h3
+        | タイトル
+      |  <input name="title" value="
+      = @post.title
+      | " class="form-control"> 
+      h3
+        | 記事
+      |  <textarea name="content" value="
+      = @post.content
+      | " rows="8" cols="80" class="form-control">
+      input[type="submit" value="投稿"]

@@ -1,0 +1,10 @@
+.main.posts-new
+  .container
+    h2
+      = @post.title
+    hr
+    h3
+      = @post.content
+    = link_to("編集", "/posts/#{@post.id}/edit")
+    = link_to("削除", "/posts/#{@post.id}/destroy", {method: "post"})
+    = link_to("戻る", "/posts/index")

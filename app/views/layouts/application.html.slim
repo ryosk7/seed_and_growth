@@ -1,0 +1,16 @@
+doctype html
+html
+  head
+    title
+      | SeedAndGrowth
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  body
+    header
+      .header-logo
+        = link_to("Seed and Growth", "/")
+      ul.header-menus
+        li
+          = link_to("ログイン", "/signup")
+    = yield
