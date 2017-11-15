@@ -3,5 +3,5 @@
     - @posts.each do |post|
       .posts-index-item
         h2
-          = link_to(post.title, "/posts/#{post.id}")
+          = link_to post.title, post_path(post)
         hr

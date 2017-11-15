@@ -3,17 +3,12 @@
     h1
       | 編集する
     hr
-    = form_tag("/posts/create") do
+    = form_with(model: @post) do |f|
       - @post.errors.full_messages.each do |message|
         .form-error
           = message
-      h3
-        | タイトル
-      |  <input name="title" value="
-      = @post.title
-      | " class="form-control"> 
-      h3
-        | 記事
-      textarea.form-control[name="content" rows="8" cols="80"]
-        = @post.content
-      input[type="submit" value="編集"]
+      h3 タイトル
+      = f.text_field @post.title, class: 'form-control'
+      h3 記事
+      = f.text_area @post.content, class: 'form-control', name: 'content', rows:'8', cols:'80'
+      = f.submit class: 'btn-treehouse'
