@@ -1,8 +1,7 @@
 p
-  | Welcome 
-  = @email
-  | !
+  = t('.greeting', recipient: @resource.email, default: "Welcome #{@resource.email}!")
 p
-  | You can confirm your account email through the link below:
+  = t('.instruction', default: 'You can confirm your account email through the link below:')
 p
-  = link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token)
+  = link_to t('.action', default: 'Confirm my account'),
+  -          confirmation_url(@resource, confirmation_token: @token, locale: I18n.locale)

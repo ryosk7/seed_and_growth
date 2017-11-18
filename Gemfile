@@ -8,6 +8,7 @@ end
 gem 'rails', '~> 5.1.4'
 gem 'sqlite3'
 
+gem 'devise-bootstrap-views'
 gem 'bootstrap-sass', '3.3.7'
 gem 'coffee-rails', '~> 4.2'
 gem 'devise'

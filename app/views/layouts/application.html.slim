@@ -12,7 +12,11 @@ html
         = link_to("Seed and Growth", "/")
       ul.header-menus
         li
-          = link_to("ログイン", "/signup")
+          - if user_signed_in?
+            = link_to("ログアウト", destroy_user_session_path, method: :delete)
+          - else
+            = link_to("ログイン", new_user_session_path)
+
     p.notice
       = notice
     p.alert
