@@ -7,18 +7,26 @@ html
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   body
-    header
-      .header-logo
-        = link_to("Seed and Growth", "/")
-      ul.header-menus
-        li
-          - if user_signed_in?
-            = link_to("ログアウト", destroy_user_session_path, method: :delete)
-          - else
-            = link_to("ログイン", new_user_session_path)
+    nav class="navbar navbar-default"
+      div class="container-fluid"
 
-    p.notice
-      = notice
-    p.alert
-      = alert
-    = yield
+        div class="navbar-header"
+          = link_to("Seed and Growth", root_path, class: "navbar-brand")
+
+        div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"
+          ul class="nav navbar-nav navbar-right"
+            - if user_signed_in?
+              li
+                = link_to("投稿", new_post_path)
+              li
+                = link_to("ログアウト", destroy_user_session_path, method: :delete, class: "navbar-link")
+            - else
+              li
+                = link_to("ログイン", new_user_session_path, class: "navbar-link")
+
+    div.container
+      p.notice
+        = notice
+      p.alert
+        = alert
+      = yield
