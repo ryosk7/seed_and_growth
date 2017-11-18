@@ -1,7 +1,14 @@
 .main.posts-index
   .container
     - @posts.each do |post|
-      .posts-index-item
-        h2
-          = link_to post.title, post_path(post)
+
+        div.card style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2))"
+          div.card-category Web StartUp
+          div.card-description
+            h2
+              = link_to post.title, post_path(post)
+          div.container
+            div.card-content
+              h3
+                = post.content
         hr

@@ -23,11 +23,10 @@ class PostsController < ApplicationController
   def edit; end
 
   def update
-    @post = Post.find_by(id: params[:id])
-    @post.title = params[:title]
-    @post.content = params[:content]
+    @post.title = params[:post][:title]
+    @post.content = params[:post][:content]
     if @post.save
-      redirect_to post_path(@post)
+      redirect_to posts_path(@post)
     else
       render edit_post_path(@post)
     end
@@ -40,11 +39,11 @@ class PostsController < ApplicationController
 
   private
 
-  def set_post
-    @post = Post.find_by(id: params[:id])
-  end
+      def set_post
+        @post = Post.find_by(id: params[:id])
+      end
 
-  def post_params
-    params.permit(:title, :content)
-  end
+      def post_params
+        params.require(:post).permit(:content, :title)
+      end
 end
