@@ -1,10 +1,16 @@
 .main.posts-new
   .container
-    h2
-      = @post.title
-    hr
+    div.card style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('#{@post.picture if @post.picture?}')"
+      div.card-category Web StartUp
+      div.card-description
+        h2
+          = @post.title
+      div.container
+        div.card-content
+          h3
+            = @post.content
     h3.show_content
-      = @post.content
+      = @post.article.html_safe
     = link_to '編集', edit_post_path
     = link_to '削除', post_path, method: :delete
     = link_to '戻る', posts_path

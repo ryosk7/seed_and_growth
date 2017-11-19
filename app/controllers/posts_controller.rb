@@ -25,6 +25,8 @@ class PostsController < ApplicationController
   def update
     @post.title = params[:post][:title]
     @post.content = params[:post][:content]
+    @post.picture = params[:post][:picture]
+    @post.article = params[:post][:article]
     if @post.save
       flash[:info] = "編集しました！"
       redirect_to posts_path(@post)
@@ -47,6 +49,6 @@ class PostsController < ApplicationController
       end
 
       def post_params
-        params.require(:post).permit(:content, :title)
+        params.require(:post).permit(:content, :title, :picture, :article)
       end
 end
