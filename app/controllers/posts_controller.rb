@@ -26,14 +26,17 @@ class PostsController < ApplicationController
     @post.title = params[:post][:title]
     @post.content = params[:post][:content]
     if @post.save
+      flash[:info] = "編集しました！"
       redirect_to posts_path(@post)
     else
+      flash[:wanding] = "失敗しました。 もう一度投稿内容を確認してください..."
       render edit_post_path(@post)
     end
   end
 
   def destroy
     @post.destroy
+    flash[:info] = "投稿を削除しました！"
     redirect_to posts_path
   end
 
