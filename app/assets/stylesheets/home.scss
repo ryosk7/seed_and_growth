@@ -3,3 +3,21 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+/* エラーメッセージ */
+.alert-notice {
+  color: #3c763d;
+  background-color: #dff0d8;
+  text-align: center;
+}
+.alert-alert {
+  background-color: #f2dede;
+  color: #a94442;
+  text-align: center;
+}
+.alert-info {
+  text-align: center;
+}
+.alert-warning {
+  text-align: center;
+}

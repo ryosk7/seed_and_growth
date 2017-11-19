@@ -1,0 +1,16 @@
+nav class="navbar navbar-default"
+  div class="container-fluid"
+
+    div class="navbar-header"
+      = link_to("Seed and Growth", root_path, class: "navbar-brand")
+
+    div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"
+      ul class="nav navbar-nav navbar-right"
+        - if user_signed_in?
+          li
+            = link_to("投稿", new_post_path)
+          li
+            = link_to("ログアウト", destroy_user_session_path, method: :delete, class: "navbar-link")
+        - else
+          li
+            = link_to("ログイン", new_user_session_path, class: "navbar-link")

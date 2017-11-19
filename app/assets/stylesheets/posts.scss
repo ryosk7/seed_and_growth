@@ -24,6 +24,9 @@
   position: absolute;
   bottom: 10px;
   left: 10px;
+  word-wrap: break-word;
+  white-space: normal;
+  display: block;
 }
 .card-description h2 {
   font-size: 24px;
@@ -52,4 +55,10 @@
   right: 0;
   word-wrap: break-word;
   width: 500px;
+}
+
+.show_content {
+  word-wrap: break-word;
+  white-space: normal;
+  display: block;
 }
