@@ -9,6 +9,10 @@
           = message
       h3 タイトル
       = f.text_field :title, class: 'form-control'
-      h3 記事
+      h3 サムネイル画像
+      = f.file_field :picture
+      h3 概要
       = f.text_area :content, class: 'form-control', rows:'2', cols:'20'
+      h3 内容
+      = f.cktext_area :article, class: 'ckeditor'
       = f.submit class: 'btn-treehouse'
