@@ -14,3 +14,5 @@
 //= require turbolinks
 //= require_tree .
 //= require ckeditor/init
+
+$(document).on('turbolinks:load', function() { });
