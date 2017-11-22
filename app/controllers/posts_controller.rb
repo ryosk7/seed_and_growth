@@ -1,14 +1,16 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: %i[show edit update destroy]
+  before_action :set_current_user_post, only: %i[edit update destroy]
 
   def index
     @posts = Post.all
   end
 
-  def show; end
+  def show
+    @post = Post.find_by(id: params[:id])
+  end
 
   def new
-    @post = Post.new
+    @post = current_user.posts.build
   end
 
   def create
@@ -44,11 +46,11 @@ class PostsController < ApplicationController
 
   private
 
-      def set_post
-        @post = Post.find_by(id: params[:id])
+      def set_current_user_post
+        @post = current_user.posts.find_by(id: params[:id])
       end
 
       def post_params
-        params.require(:post).permit(:content, :title, :picture, :article)
+        params.require(:post).permit(:content, :title, :picture, :article, :user_id)
       end
 end

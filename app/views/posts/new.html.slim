@@ -7,6 +7,7 @@
       - @post.errors.full_messages.each do |message|
         .form-error
           = message
+      = f.hidden_field :user_id
       h3 タイトル
       = f.text_field :title, class: 'form-control'
       h3 サムネイル画像
