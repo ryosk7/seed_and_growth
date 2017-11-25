@@ -3,7 +3,7 @@
     h1
       | 投稿する
     hr
-    = form_with(model: @post) do |f|
+    = form_with(model: @post, local: true) do |f|
       - @post.errors.full_messages.each do |message|
         .form-error
           = message
