@@ -1,14 +1,15 @@
 .main.posts-new
   .container
-    div.card style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('#{@post.picture if @post.picture?}')"
-      div.card-category Web StartUp
-      div.card-description
-        h2
+    .card style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('#{@post.picture if @post.picture?}')"
+      .card-category Web StartUp
+      .card-description
+        h1
           = @post.title
-      div.container
-        div.card-content
+      .container
+        .card-content
           h3
             = @post.content
+    = @post.first_iframe
     h3.show_content
       = @post.article.html_safe
     = link_to '編集', edit_post_path

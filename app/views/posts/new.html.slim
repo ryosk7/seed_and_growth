@@ -13,6 +13,8 @@
       = f.file_field :picture
       h3 概要
       = f.text_area :content, class: 'form-control', rows:'2', cols:'20'
+      h3 Google スライド(URL)
+      = f.text_area :first_url, class: 'form-control', rows:'2', cols:'20'
       h3 内容
       = f.cktext_area :article, class: 'ckeditor'
       = f.submit class: 'btn-treehouse'
