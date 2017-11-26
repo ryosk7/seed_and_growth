@@ -3,16 +3,19 @@
     h1
       | 編集する
     hr
-    = form_with(model: @post) do |f|
+    = form_with(model: @post, local: true) do |f|
       - @post.errors.full_messages.each do |message|
         .form-error
           = message
       h3 タイトル
       = f.text_field :title, class: 'form-control'
       h3 サムネイル画像
+      p 未選択の場合、 以前の画像が適用されます。
       = f.file_field :picture
       h3 概要
       = f.text_area :content, class: 'form-control', rows:'2', cols:'20'
+      h3 Google スライド / YouTube (URL)
+      = f.text_area :first_url, class: 'form-control', rows:'2', cols:'20'
       h3 内容
       = f.cktext_area :article, class: 'ckeditor'
       = f.submit class: 'btn-treehouse'

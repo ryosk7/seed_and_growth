@@ -1,9 +1,14 @@
+javascript:
+  $('#something').click(function() {
+    location.reload();
+  });
+
 .main.posts-new
   .container
     h1
       | 投稿する
     hr
-    = form_with(model: @post) do |f|
+    = form_with(model: @post, local: true) do |f|
       - @post.errors.full_messages.each do |message|
         .form-error
           = message
@@ -13,6 +18,10 @@
       = f.file_field :picture
       h3 概要
       = f.text_area :content, class: 'form-control', rows:'2', cols:'20'
+      h3 Google スライド / YouTube (URL)
+      = f.text_area :first_url, class: 'form-control', rows:'2', cols:'20'
       h3 内容
+      button#something
+        | エディタを表示する
       = f.cktext_area :article, class: 'ckeditor'
       = f.submit class: 'btn-treehouse'

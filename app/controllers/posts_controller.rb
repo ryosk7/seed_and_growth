@@ -16,18 +16,14 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to post_path(@post)
     else
-      render new_post_path
+      render :new
     end
   end
 
   def edit; end
 
   def update
-    @post.title = params[:post][:title]
-    @post.content = params[:post][:content]
-    @post.picture = params[:post][:picture]
-    @post.article = params[:post][:article]
-    if @post.save
+    if @post.update(post_params)
       flash[:info] = "編集しました！"
       redirect_to posts_path(@post)
     else
@@ -49,6 +45,6 @@ class PostsController < ApplicationController
       end
 
       def post_params
-        params.require(:post).permit(:content, :title, :picture, :article)
+        params.require(:post).permit(:content, :title, :picture, :article, :first_url)
       end
 end
