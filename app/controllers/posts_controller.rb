@@ -5,10 +5,12 @@ class PostsController < ApplicationController
     @posts = Post.all
   end
 
-  def show; end
+  def show
+    @post = Post.find_by(id: params[:id])
+  end
 
   def new
-    @post = Post.new
+    @post = current_user.posts.build
   end
 
   def create
@@ -41,10 +43,10 @@ class PostsController < ApplicationController
   private
 
       def set_post
-        @post = Post.find_by(id: params[:id])
+        @post = current_user.posts.find_by(id: params[:id])
       end
 
       def post_params
-        params.require(:post).permit(:content, :title, :picture, :article, :first_url)
+        params.require(:post).permit(:content, :title, :picture, :article, :first_url, :user_id)
       end
 end

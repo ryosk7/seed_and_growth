@@ -7,6 +7,7 @@
       - @post.errors.full_messages.each do |message|
         .form-error
           = message
+      = f.hidden_field :user_id
       h3 タイトル
       = f.text_field :title, class: 'form-control'
       h3 サムネイル画像
@@ -15,6 +16,8 @@
       h3 概要
       = f.text_area :content, class: 'form-control', rows:'2', cols:'20'
       h3 Google スライド / YouTube (URL)
+      p Google スライドの場合： リンク中のpubをembedに書き換えてください
+      p Youtubeの場合： 埋め込みからリンクを取ってきてください
       = f.text_area :first_url, class: 'form-control', rows:'2', cols:'20'
       h3 内容
       = f.cktext_area :article, class: 'ckeditor'
