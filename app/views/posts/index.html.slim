@@ -2,15 +2,15 @@
   .container
     - @posts.each do |post|
       = link_to post_path(post) do
-        div.card style="background-image: linear-gradient(-225deg, rgba(26,158,42,0.6) 0%, rgba(0,36,61,0.6) 50%), url('#{post.picture.url if post.picture?}')"
-          div.card-category
+        .card style="background-image: linear-gradient(-225deg, rgba(26,158,42,0.6) 0%, rgba(0,36,61,0.6) 50%), url('#{post.picture.url if post.picture?}')"
+          .card-category
             h1
               = post.user.email
-          div.card-description
+          .card-description
             h1
               = post.title
-          div.container
-            div.card-content
+          .container
+            .card-content
               h2
                 = post.content
       hr
