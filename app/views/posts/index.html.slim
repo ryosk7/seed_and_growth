@@ -4,13 +4,15 @@
       = link_to post_path(post) do
         .card style="background-image: linear-gradient(-225deg, rgba(26,158,42,0.6) 0%, rgba(0,36,61,0.6) 50%), url('#{post.picture.url if post.picture?}')"
           .card-category
-            h1
-              = post.user.email
+
           .card-description
             h1
               = post.title
           .container
             .card-content
-              h2
+              p
                 = post.content
+          .card-user
+            p
+              = "#{post.user.username}   "
       hr

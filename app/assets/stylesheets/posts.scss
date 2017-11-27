@@ -26,8 +26,8 @@
 .card-user {
   position: absolute;
   right: 10px;
-  top: 10px;
-  width: 40px;
+  bottom: 10px;
+  width: auto;
   border-radius: 50%;
 }
 .card-category {
@@ -39,11 +39,14 @@
 }
 .card-description {
   position: absolute;
-  bottom: 10px;
+  top: 0px;
   left: 10px;
   word-wrap: break-word;
   white-space: normal;
   display: block;
+  h1 {
+    font-size: 50px;
+  }
 }
 .card-description h2 {
   font-size: 24px;
@@ -71,7 +74,7 @@
   top: 0;
   right: 0;
   word-wrap: break-word;
-  width: 500px;
+  width: 450px;
 }
 
 .show_content {

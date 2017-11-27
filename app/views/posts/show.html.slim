@@ -7,7 +7,7 @@
       = @post.title
     h2.show-content
       = @post.content
-    = "create by -- #{@post.user.email}"
+    = "create by -- #{@post.user.username}  "
     - if current_user.id == @post.user.id
       hr
         = link_to '編集', edit_post_path, class: 'btn-medium'
