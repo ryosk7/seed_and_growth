@@ -1,3 +1,18 @@
+.show-title {
+  font-size: 70px;
+  margin-bottom: 80px;
+  color: #3ac162;
+}
+
+.show-content {
+  font-size: 40px;
+  margin-bottom: 40px;
+}
+
+.username {
+  margin-left: 10px;
+}
+
 .card {
   height: 400px;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
@@ -75,4 +90,19 @@
 
 .first_iframe {
   text-align: center;
+}
+
+.btn-medium {
+  color: #999999;
+  border: 1px solid #999999;
+  padding: 10px 15px;
+  margin-right: 15px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+}
+.btn-medium:hover {
+  opacity: 1;
+  text-decoration: none;
+  color: #999999;
 }
