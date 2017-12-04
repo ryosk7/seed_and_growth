@@ -1,0 +1,15 @@
+/ h1
+/   | All users
+/
+/ ul.users
+/   - @users.each do |user|
+/     li
+/       = link_to user.username, user
+/       = render 'follow_form'
+/       = render 'layouts/stats'
+
+h1 ユーザー一覧
+- @users.each do |user|
+  = user.username
+  br
+  = link_to("#{user.username}のページだよ。", user_path(user.id) )

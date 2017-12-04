@@ -1,0 +1,3 @@
+= form_for(current_user.active_relationships.build(following_id: @user.id)) do |f|
+  = f.hidden_field :following_id
+  = f.submit "Follow", class: "btn btn-large btn-primary follow-btn"
