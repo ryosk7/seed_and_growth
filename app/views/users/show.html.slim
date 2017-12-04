@@ -1,0 +1,22 @@
+/ h1
+/   = @user.username
+/
+/ = render 'layouts/stats'
+
+h1
+  = @user.username
+
+- if user_signed_in?
+  - unless current_user?(@user)
+    div id="follow_form"
+    - if current_user.following?(@user)
+      = render 'unfollow'
+    - else
+      = render 'follow'
+
+= link_to(following_user_path(@user))
+  = @user.following.count
+  | following
+= link_to(followers_user_path(@user))
+  = @user.followers.count
+  | followers

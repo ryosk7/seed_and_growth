@@ -12,6 +12,8 @@ nav class="navbar navbar-default"
           li
             = link_to("投稿", new_post_path)
           li
+            = link_to("User", current_user)
+          li
             = link_to("ログアウト", destroy_user_session_path, method: :delete, class: "navbar-link")
         - else
           li
