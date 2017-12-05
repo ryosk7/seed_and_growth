@@ -6,6 +6,8 @@
 
 a {
   font-size: 20px;
+  text-decoration: none !important;
+  color: #7a7777;
 }
 
 a.navbar-brand{
@@ -16,6 +18,14 @@ a.navbar-brand{
   margin-bottom: 0px !important;
   padding-top: 4px;
   padding-bottom: 4px;
+}
+
+.dropdown-toggle {
+  padding: 0px 10px !important;
+}
+
+.logout {
+  color: #ee9d53 !important;
 }
 
 /* エラーメッセージ */
@@ -87,4 +97,30 @@ a.navbar-brand{
   background: #3ac162;
   text-decoration: none;
   color: white;
+}
+
+.btn-facebook.btn.btn-lg.btn-block {
+  color: white;
+  background-color: #3B5998;
+  font-size: 20px;
+  width: 200px;
+  margin: 0 auto;
+  &:hover {
+    color: white;
+    background-color: #627AAC;
+  }
+}
+
+.login-session {
+  font-size: 70px;
+  color: #3ac162;
+  text-align: center;
+  margin: 30px;
+}
+
+.login-session-discription {
+  font-size: 20px;
+  text-align: center;
+  color: #7a7777;
+  margin: 30px;
 }
