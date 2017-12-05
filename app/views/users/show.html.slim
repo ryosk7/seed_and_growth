@@ -5,7 +5,8 @@
 
 h1
   = @user.username
-
+= image_tag(@user.avatar)
+br
 - if user_signed_in?
   - unless current_user?(@user)
     div id="follow_form"
