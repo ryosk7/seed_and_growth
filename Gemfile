@@ -8,6 +8,9 @@ end
 gem 'rails', '~> 5.1.4'
 gem 'sqlite3'
 
+gem 'dotenv-rails', require: 'dotenv/rails-now'
+gem 'omniauth'
+gem 'omniauth-facebook'
 gem 'jquery-rails'
 gem 'active_decorator'
 gem 'carrierwave'
