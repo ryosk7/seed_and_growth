@@ -8,7 +8,7 @@
     h2.show-content
       = @post.content
     = link_to(user_path(@user))
-      = "create by -- #{@post.user.username}  "
+      = "Created by -- #{@post.user.username}  "
       = image_tag(@user.avatar, class: "avatar-image")
     - if current_user.id == @post.user.id
       hr

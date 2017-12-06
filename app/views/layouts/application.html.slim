@@ -14,4 +14,7 @@ html
       div class="alert alert-#{key}"
         div.container
           = value
-    = yield
+    #wrap
+      = yield
+    #push
+    = render "layouts/footer"
