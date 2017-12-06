@@ -5,9 +5,9 @@ javascript:
 
 .main.posts-new
   .container
-    h1
+    h1.user-index
       | 投稿する
-    hr
+    hr.user-hr
     = form_with(model: @post, local: true) do |f|
       - @post.errors.full_messages.each do |message|
         .form-error

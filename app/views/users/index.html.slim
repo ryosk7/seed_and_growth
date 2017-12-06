@@ -8,8 +8,11 @@
 /       = render 'follow_form'
 /       = render 'layouts/stats'
 
-h1 ユーザー一覧
-- @users.each do |user|
-  = user.username
-  br
-  = link_to("#{user.username}のページだよ。", user_path(user.id) )
+.container
+  h1.user-index Users
+  hr.user-hr
+  - @users.each do |user|
+    h2.user-index-name
+      = image_tag(user.avatar, class: "avatar-image-index")
+      = link_to("#{user.username}", user_path(user.id) )
+    hr

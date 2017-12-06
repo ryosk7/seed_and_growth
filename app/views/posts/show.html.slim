@@ -7,7 +7,9 @@
       = @post.title
     h2.show-content
       = @post.content
-    = "create by -- #{@post.user.username}  "
+    = link_to(user_path(@user))
+      = "Created by -- #{@post.user.username}  "
+      = image_tag(@user.avatar, class: "avatar-image")
     - if current_user.id == @post.user.id
       hr
         = link_to '編集', edit_post_path, class: 'btn-medium'

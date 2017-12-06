@@ -3,6 +3,7 @@ html
   head
     title
       | SeedAndGrowth
+    link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" /
     = csrf_meta_tags
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
@@ -13,4 +14,7 @@ html
       div class="alert alert-#{key}"
         div.container
           = value
-    = yield
+    #wrap
+      = yield
+    #push
+    = render "layouts/footer"
