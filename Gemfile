@@ -7,6 +7,7 @@ end
 
 gem 'rails', '~> 5.1.4'
 
+gem 'materialize-sass'
 gem 'dotenv-rails', require: 'dotenv/rails-now'
 gem 'omniauth'
 gem 'omniauth-facebook'

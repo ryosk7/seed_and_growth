@@ -1,30 +1,11 @@
-javascript:
-  $('#something').click(function() {
-    location.reload();
-  });
-
 .main.posts-new
   .container
     h1.user-index
       | 投稿する
     hr.user-hr
-    = form_with(model: @post, local: true) do |f|
-      - @post.errors.full_messages.each do |message|
-        .form-error
-          = message
-      = f.hidden_field :user_id
-      h3 タイトル
-      = f.text_field :title, class: 'form-control'
-      h3 サムネイル画像
-      = f.file_field :picture
-      h3 概要
-      = f.text_area :content, class: 'form-control', rows:'2', cols:'20'
-      h3 Google スライド / YouTube (URL)
-      p Google スライドの場合： リンク中のpubをembedに書き換えてください
-      p Youtubeの場合： 埋め込みからリンクを取ってきてください
-      = f.text_area :first_url, class: 'form-control', rows:'2', cols:'20'
-      h3 内容
-      button#something
-        | エディタを表示する
-      = f.cktext_area :article, class: 'ckeditor'
-      = f.submit class: 'btn-treehouse'
+    = render "layouts/form"
+
+javascript:
+  $(document).on('ready page:load', function () {
+    CKEDITOR.replace('recipe_steps');
+  });

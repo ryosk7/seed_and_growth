@@ -3,22 +3,12 @@
     h1.user-index
       | 編集する
     hr.user-hr
-    = form_with(model: @post, local: true) do |f|
-      - @post.errors.full_messages.each do |message|
-        .form-error
-          = message
-      = f.hidden_field :user_id
-      h3 タイトル
-      = f.text_field :title, class: 'form-control'
-      h3 サムネイル画像
-      p 未選択の場合、 以前の画像が適用されます。
-      = f.file_field :picture
-      h3 概要
-      = f.text_area :content, class: 'form-control', rows:'2', cols:'20'
-      h3 Google スライド / YouTube (URL)
-      p Google スライドの場合： リンク中のpubをembedに書き換えてください
-      p Youtubeの場合： 埋め込みからリンクを取ってきてください
-      = f.text_area :first_url, class: 'form-control', rows:'2', cols:'20'
-      h3 内容
-      = f.cktext_area :article, class: 'ckeditor'
-      = f.submit class: 'btn-treehouse'
+    p.image-note
+      | 画像を新しく選択しない場合、 以前使用した画像が適用されます。
+    = render "layouts/form"
+
+
+javascript:
+  $(document).on('ready page:load', function () {
+    CKEDITOR.replace('recipe_steps');
+  });
