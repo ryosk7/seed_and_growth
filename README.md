@@ -15,6 +15,8 @@ Google slides や YouTube によるiframeのリンクを貼ることで、 オ�
 # 開発環境
   - Ruby (ver: 2.4.2)
   - Rails (ver: 5.1.4)
+  - GitKraken
+  - Ubuntu Gnome 16.04 LTS
 
 # 使用している主なGem
   - omniauth
@@ -24,12 +26,15 @@ Google slides や YouTube によるiframeのリンクを貼ることで、 オ�
   - bootstrap-sass
   - carrierwave
   - mini-magick
-  - dotenv
+  - pry-rails
+  - slim-rails
+  - fog
+  - dotenv-rails
 
 # Set up for local
 git clone を済ませたら、
 ```sh
-$ bundle install
+$ bundle install --without production
 $ rails db:migrate
 $ git add -A
 $ git commit -m "Hello, Seed and Growth!"
@@ -54,6 +59,8 @@ $ touch .env
 config/initializers/devise.rbにある「config.secret_key」の部分をコメントアウトして、fingerprintを.env ファイルに代入します。
 
 ```sh
+# /seed_and_growth/.env
+
 #Facebook Keys
 APP_ID="**********"
 APP_SECRET="***********************"
@@ -61,6 +68,41 @@ APP_SECRET="***********************"
 #Devise key
 DEVISE_KEY="***********************"
 ```
+
+次に  Herokuにこのアプリケーションを追加します。
+アカウントをお持ちでない方は、 まずアカウントを作りましょう。
+Heroku: https://www.heroku.com/
+
+ターミナルで次のコマンドを打ち込んでください。
+
+```sh
+$ heroku version
+```
+
+このように返ってきたらherokuをターミナルでherokuを使う用意ができています。
+
+```sh
+heroku-cli/6.14.39-addc925 (linux-x64) node-v9.2.0
+```
+
+もし入っていないようでしたら、 こちらからインストールしてください。
+Heroku Tookbelt: https://devcenter.heroku.com/articles/heroku-cli
+
+Heroku のコマンドライン インターフェイスがインストールされていることが確認できたら、
+以下のようなコマンドでログインして、 SSHキーの追加を行います。
+
+```sh
+$ heroku login
+$ heroku keys:add
+```
+
+そして、 Herokuサーバー上にアプリケーションを追加します。
+
+```sh
+$ heroku create
+```
+
+
 さらにAWSのS3を利用している利用しているので、こちらも環境変数と追加します。
 AWS及びS3については、他の方の記事を参考にしてください。
 S3の環境変数は以下のコマンドのように、Herokuに直接代入してください。
@@ -73,6 +115,7 @@ $ heroku config:set S3_REGION="*****************"
 ```
 これで準備が整いました。
 それでは、HerokuにPushしていきましょう。
+
 ```sh
 $ rails assets:precompile
 $ git add -A
@@ -81,8 +124,20 @@ $ git push heroku master
 $ heroku run rake db:migrate
 ```
 done!
-これでHerokuにデプロイされています。
-もし、エラーがおこっている起こっているようでしたら、 **AWS**、 **Facebook**、 または **Devise** の環境変数をもう一度確認してください。
+これでHerokuにデプロイされています。 ターミナルにリンクが貼られているので、そこをクリックするか、
+
+```sh
+$ heroku open
+```
+
+でリンクに 飛ぶことができます。
+もし、エラーが起こっているようでしたら、 **AWS**、 **Facebook**、 または **Devise** の環境変数をもう一度確認してください。
+
+```sh
+heroku logs
+```
+
+で確認する方法もあります。 参考にしてください。
 おつかれさまでした。
 
 # Developer
