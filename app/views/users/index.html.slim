@@ -13,6 +13,7 @@
   hr.user-hr
   - @users.each do |user|
     h2.user-index-name
-      = image_tag(user.avatar, class: "avatar-image-index")
-      = link_to("#{user.username}", user_path(user.id) )
-    hr
+      = link_to(user_path(user.id))
+        = image_tag(user.avatar, class: "avatar-image-index")
+        = user.username
+        hr
