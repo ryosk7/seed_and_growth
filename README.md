@@ -51,7 +51,8 @@ $ rails server
 $ touch .env
 ```
 次にFacebook、 deviseの変数を入れます。
-config/initializers/devise.rbにある「config.secret_key」の部分をコメントアウト。
+config/initializers/devise.rbにある「config.secret_key」の部分をコメントアウトして、fingerprintを.env ファイルに代入します。
+
 ```sh
 #Facebook Keys
 APP_ID="**********"
