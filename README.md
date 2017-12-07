@@ -2,7 +2,8 @@
 
 [![N|Solid](http://res.cloudinary.com/dmzlfjx06/image/upload/c_scale,w_215/v1512675724/IMG_6971_nn0ew3.jpg)](https://sng-beta.herokuapp.com/)
 
-Heroku test site: https://sng-beta.herokuapp.com/
+Heroku test site: https://sng-beta.herokuapp.com/  
+
 **ログインにはFacebookアカウントが必要です**
 
 ### **スライドを使ってアイデアをピッチするサービス**
@@ -32,7 +33,7 @@ $ bundle install
 $ rails db:migrate
 $ git add -A
 $ git commit -m "Hello, Seed and Growth!"
-& git push origin master
+$ git push origin master
 ```
 を実行してください。
 local serverはターミナルの別タブを開いて、
@@ -75,8 +76,8 @@ $ heroku config:set S3_REGION="*****************"
 $ rails assets:precompile
 $ git add -A
 $ git commit -m "Set up for Heroku"
-& git push heroku master
-& heroku run rake db:migrate
+$ git push heroku master
+$ heroku run rake db:migrate
 ```
 done!
 これでHerokuにデプロイされています。
