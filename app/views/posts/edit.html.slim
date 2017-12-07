@@ -6,9 +6,3 @@
     p.post-note
       | 画像を新しく選択しない場合、 以前使用した画像が適用されます。
     = render "layouts/form"
-
-
-javascript:
-  $(document).on('ready page:load', function () {
-    CKEDITOR.replace('recipe_steps');
-  });
