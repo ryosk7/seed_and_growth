@@ -9,15 +9,15 @@
 .banner
   .banner-content
     .container
-      h1
+      h1.home-mongon
         | アイデアは成長する
-      p
+      p.home-mongon-second
         | あなたのアイデアを公開しよう
       = link_to 'Start Now', new_user_registration_path, class: 'btn-treehouse'
 .banner-about-1
   .container
     .row
-      .col-xs-6
+      .col-md-6.col-xs-12
         .sng-about
           h1
             | Seed and Growth で、 できること
@@ -25,5 +25,5 @@
             | 動画やスライドを使ってピッチし，アップロードします．それをサポーターの方々がみて，
               コメントをしてアドバイスしたり，応援したり，実際に協力することができます．
               応援したときに支援者として名前が載ります．
-      .col-xs-6
+      .col-md-6.col-xs-12
         = image_tag '/sng_info.png', class: 'sng-info'

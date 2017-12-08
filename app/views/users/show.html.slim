@@ -3,27 +3,74 @@
 /
 / = render 'layouts/stats'
 
-.user-profile
-  .container
-    .row
-      .col-xs-6
-        = image_tag(@user.avatar + "?type=large", class: "avatar-image-show")
-      .col-xs-6
-        h1.user-name-show
-          = @user.username
-        br
-        - if user_signed_in?
-          - unless current_user?(@user)
-            div id="follow_form"
-            - if current_user.following?(@user)
-              = render 'unfollow'
-            - else
-              = render 'follow'
+.pc
+  .user-profile
+    .container
+      .row
+        .col-xs-6
+          = image_tag(@user.avatar + "?type=large", class: "avatar-image-show")
+        .col-xs-6
+          h1.user-name-show
+            = @user.username
+          br
+          - if user_signed_in?
+            - unless current_user?(@user)
+              div id="follow_form"
+              - if current_user.following?(@user)
+                = render 'unfollow'
+              - else
+                = render 'follow'
 
-        = link_to("#{@user.following.count}人をフォロー中", following_user_path(@user), class: "following-link")
+          = link_to("#{@user.following.count}人をフォロー中", following_user_path(@user), class: "following-link")
 
-        = link_to("フォロワー#{@user.followers.count}人", followers_user_path(@user), class: "follower-link")
-    hr.user-hr
+          = link_to("フォロワー#{@user.followers.count}人", followers_user_path(@user), class: "follower-link")
+      hr.user-hr
+
+      - @user_posts.each do |post|
+        = link_to post_path(post) do
+          .card style="background-image: linear-gradient(-225deg, rgba(26,158,42,0.6) 0%, rgba(0,36,61,0.6) 50%), url('#{post.picture.url if post.picture?}')"
+            .card-category
+
+            .card-description
+              h1
+                = post.title
+            .container
+              .card-content
+                p
+                  = post.content
+            .card-user
+              p
+                = "#{post.user.username}   "
+                = image_tag(@user.avatar, class: "avatar-image")
+        hr
+
+.sp
+  .user-profile
+    .container
+      .row
+        .col-xs-6
+          = image_tag(@user.avatar + "?type=large", class: "avatar-image-show")
+        .col-xs-6
+          h1.user-name-show
+            = @user.username
+          br
+          - if user_signed_in?
+            - unless current_user?(@user)
+              div id="follow_form"
+              - if current_user.following?(@user)
+                = render 'unfollow'
+              - else
+                = render 'follow'
+
+        .follow-line
+
+          .col-xs-12
+
+            = link_to("#{@user.following.count}人をフォロー中", following_user_path(@user), class: "following-link")
+
+            = link_to("フォロワー#{@user.followers.count}人", followers_user_path(@user), class: "follower-link")
+
+      hr.user-hr
 
     - @user_posts.each do |post|
       = link_to post_path(post) do
@@ -33,10 +80,7 @@
           .card-description
             h1
               = post.title
-          .container
-            .card-content
-              p
-                = post.content
+
           .card-user
             p
               = "#{post.user.username}   "

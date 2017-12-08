@@ -1,6 +1,14 @@
-.main.posts-new
-  .container
+.pc
+  .main.posts-new
+    .container
+      h1.user-index
+        | 投稿する
+      hr.user-hr
+      = render "layouts/form"
+
+.sp
+  .main.posts-new
     h1.user-index
-      | 投稿する
+      | New
     hr.user-hr
     = render "layouts/form"

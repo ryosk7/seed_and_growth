@@ -1,7 +1,17 @@
-.main.posts-new
-  .container
+.pc
+  .main.posts-new
+    .container
+      h1.user-index
+        | 編集する
+      hr.user-hr
+      p.post-note
+        | 画像を新しく選択しない場合、 以前使用した画像が適用されます。
+      = render "layouts/form"
+
+.sp
+  .main.posts-new
     h1.user-index
-      | 編集する
+      | Edit
     hr.user-hr
     p.post-note
       | 画像を新しく選択しない場合、 以前使用した画像が適用されます。
