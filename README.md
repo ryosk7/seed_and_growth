@@ -8,7 +8,7 @@ Heroku test site: https://sng-beta.herokuapp.com/
 
 ### **スライドを使ってアイデアをピッチするサービス**
 Google slides や YouTube によるiframeのリンクを貼ることで、 オンライン上で  
-自分のサービスを発表することができます。
+自分のサービスを発表することができます。  
 それをサポーターの方々がみて、 コメントをしてアドバイスしたり、   
 応援したり、 実際に協力することができます。 応援したときに支援者として名前が載ります。
 
@@ -31,8 +31,9 @@ Google slides や YouTube によるiframeのリンクを貼ることで、 オ�
   - fog
   - dotenv-rails
 
-# Set up for local
+# Set up local
 git clone を済ませたら、
+
 ```sh
 $ bundle install --without production
 $ rails db:migrate
@@ -40,14 +41,14 @@ $ git add -A
 $ git commit -m "Hello, Seed and Growth!"
 $ git push origin master
 ```
-を実行してください。
-local serverはターミナルの別タブを開いて、
+を実行してください。  
+local serverはターミナルに別のタブを開いて、
 ```sh
 $ rails server
 ```
 とコマンドしてください。（rails s)でも動きます。
 # Set up for Heroku
-いくつかの環境変数を格納する必要があります。
+いくつかの環境変数を格納する必要があります。  
 **dotenv gem** を利用することで、環境変数を入れることができます。
 
 **.env** ファイルがない場合、 **/seed_and_growth** 直下に **.env** ファイルを作ってください。
@@ -55,7 +56,7 @@ $ rails server
 ```sh
 $ touch .env
 ```
-次にFacebook、 deviseの変数を入れます。
+次にFacebook、 deviseの変数を入れます。  
 config/initializers/devise.rbにある「config.secret_key」の部分をコメントアウトして、fingerprintを.env ファイルに代入します。
 
 ```sh
@@ -69,8 +70,8 @@ APP_SECRET="***********************"
 DEVISE_KEY="***********************"
 ```
 
-次に  Herokuにこのアプリケーションを追加します。
-アカウントをお持ちでない方は、 まずアカウントを作りましょう。
+次に  Herokuにこのアプリケーションを追加します。  
+アカウントをお持ちでない方は、 まずアカウントを作りましょう。  
 Heroku: https://www.heroku.com/
 
 ターミナルで次のコマンドを打ち込んでください。
@@ -85,10 +86,10 @@ $ heroku version
 heroku-cli/6.14.39-addc925 (linux-x64) node-v9.2.0
 ```
 
-もし入っていないようでしたら、 こちらからインストールしてください。
+もし入っていないようでしたら、 こちらからインストールしてください。  
 Heroku Tookbelt: https://devcenter.heroku.com/articles/heroku-cli
 
-Heroku のコマンドライン インターフェイスがインストールされていることが確認できたら、
+Heroku のコマンドライン インターフェイスがインストールされていることが確認できたら、  
 以下のようなコマンドでログインして、 SSHキーの追加を行います。
 
 ```sh
@@ -103,9 +104,9 @@ $ heroku create
 ```
 
 
-さらにAWSのS3を利用している利用しているので、こちらも環境変数と追加します。
-AWS及びS3については、他の方の記事を参考にしてください。
-S3の環境変数は以下のコマンドのように、Herokuに直接代入してください。
+さらにAWSのS3を利用している利用しているので、こちらも環境変数と追加します。  
+AWS及びS3については、他の方の記事を参考にしてください。  
+S3の環境変数は以下のコマンドのように、Herokuに直接代入してください。  
 
 ```sh
 $ heroku config:set S3_ACCESS_KEY="****************"
@@ -113,7 +114,7 @@ $ heroku config:set S3_SECRET_KEY="****************"
 $ heroku config:set S3_BUCKET="*****************"
 $ heroku config:set S3_REGION="*****************"
 ```
-これで準備が整いました。
+これで準備が整いました。 :+1:  
 それでは、HerokuにPushしていきましょう。
 
 ```sh
@@ -123,22 +124,23 @@ $ git commit -m "Set up for Heroku"
 $ git push heroku master
 $ heroku run rake db:migrate
 ```
-done!
-これでHerokuにデプロイされています。 ターミナルにリンクが貼られているので、そこをクリックするか、
+done! :tada:  
+これでHerokuにデプロイされています。 :clap:  
+ターミナルにリンクが貼られているので、そこをクリックするか、  
 
 ```sh
 $ heroku open
 ```
 
-でリンクに 飛ぶことができます。
+でリンクに 飛ぶことができます。  
 もし、エラーが起こっているようでしたら、 **AWS**、 **Facebook**、 または **Devise** の環境変数をもう一度確認してください。
 
 ```sh
 heroku logs
 ```
 
-で確認する方法もあります。 参考にしてください。
-おつかれさまでした。
+で確認する方法もあります。 参考にしてください。  
+おつかれさまでした。 :wave:
 
 # Developer
-Ryosuke Uchida
+Ryosuke Uchida :grin:
