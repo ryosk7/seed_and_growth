@@ -143,3 +143,137 @@
   position:relative;
 	top:1px;
 }
+
+/* パソコン */
+@media only screen and (min-width: 750px) {
+  .sp {
+    display: none !important;
+  }
+  .pc {
+    display: block !important;
+    .user-index {
+      font-size: 70px;
+    }
+    .card-description {
+      h1 {
+        font-size: 40px;
+      }
+    }
+    .card-user {
+      p {
+        font-size: 20px;
+      }
+      .avatar-image-mini {
+        border-radius: 50%;
+        width: 50px;
+        height: auto;
+      }
+    }
+  }
+}
+/* スマートフォン */
+@media only screen and (max-width: 1000px) {
+  .pc {
+    display: none !important;
+  }
+  .sp {
+    display: block !important;
+
+    .navbar-default {
+      padding-bottom: 0px;
+      border-color: #4b390a;
+      .container-fluid {
+        height: 160px;
+        background-color: #4b390a;
+        .avatar-image {
+          margin: 15px 30px 10px 0;
+          width: 130px;
+        }
+        .dropdown-menu {
+          width: 100%;
+          height: auto;
+        }
+      }
+    }
+    .navbar-brand {
+      margin-top: 50px;
+      font-size: 60px;
+      color: #00bd69;
+      font-weight: bold;
+    }
+    .user-index {
+      font-size: 250px;
+    }
+    .card-description {
+      h1 {
+        font-size: 108px;
+      }
+    }
+    .card-user {
+      p {
+        font-size: 57px;
+      }
+      .avatar-image-mini {
+        border-radius: 50%;
+        width: 100px;
+        height: auto;
+      }
+    }
+    .user-index-name {
+      .username {
+        font-size: 70px;
+      }
+      .avatar-image-index {
+        border-radius: 50%;
+        margin-left: 50px;
+        width: 200px;
+        height: auto;
+      }
+    }
+    .user-profile {
+      .avatar-image-show {
+        border-radius: 50%;
+        margin-left: 0px;
+      }
+      .user-name-show {
+        font-size: 80px;
+      }
+      .following-link {
+        font-size: 40px;
+        margin-right: 200px;
+      }
+      .follower-link {
+        font-size: 40px;
+      }
+      .follow-list {
+        margin: 0 auto;
+        text-align: center;
+      }
+    }
+    .posts-new {
+      h3 {
+        font-size: 70px;
+      }
+      .form-control {
+        font-size: 40px;
+        height: 100px;
+        border-color: #578bd8;
+        font-weight: bold;
+      }
+      .form-content {
+        height: 180px;
+      }
+      .ckeditor {
+        font-size: 40px;
+      }
+      .post-note {
+        font-size: 40px;
+      }
+      .show-title {
+        h1 {
+          font-size: 100px;
+        }
+      }
+    }
+  }
+}
