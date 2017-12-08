@@ -6,7 +6,7 @@ Heroku test site: https://sng-beta.herokuapp.com/
 
 **ログインにはFacebookアカウントが必要です**
 
-### **スライドを使ってアイデアをピッチするサービス**
+## **スライドを使ってアイデアをピッチするサービス**
 Google slides や YouTube によるiframeのリンクを貼ることで、 オンライン上で  
 自分のサービスを発表することができます。  
 それをサポーターの方々がみて、 コメントをしてアドバイスしたり、   
@@ -15,6 +15,7 @@ Google slides や YouTube によるiframeのリンクを貼ることで、 オ�
 # 開発環境
   - Ruby (ver: 2.4.2)
   - Rails (ver: 5.1.4)
+  - Atom Editor
   - GitKraken
   - Ubuntu Gnome 16.04 LTS
 
@@ -32,7 +33,16 @@ Google slides や YouTube によるiframeのリンクを貼ることで、 オ�
   - dotenv-rails
 
 # Set up local
-git clone を済ませたら、
+まずは git clone します。  
+ローカル環境の任意のフォルダに以下のコマンドを打ちます。
+
+```sh
+$ git init
+$ git clone https://github.com/ryosk7/seed_and_growth.git
+```
+
+次に Gemfile に入っている Gem をインストールします。  
+**オプションコマンドの --without production を付けないとエラーが起こることがあります。**
 
 ```sh
 $ bundle install --without production
@@ -41,15 +51,20 @@ $ git add -A
 $ git commit -m "Hello, Seed and Growth!"
 $ git push origin master
 ```
-を実行してください。  
-local serverはターミナルに別のタブを開いて、
+以上でローカル環境のセットアップは終了です。  
+ブラウザに表示させる時は、 ターミナルに別のタブを開いて、  
+
 ```sh
 $ rails server
 ```
-とコマンドしてください。（rails s)でも動きます。
+とコマンドしてください。（rails s)でも動きます。  
+
+https://localhost:3000 で見ることができます。
+
 # Set up for Heroku
+
 いくつかの環境変数を格納する必要があります。  
-**dotenv gem** を利用することで、環境変数を入れることができます。
+**dotenv-rails gem** を利用することで、環境変数を入れることができます。
 
 **.env** ファイルがない場合、 **/seed_and_growth** 直下に **.env** ファイルを作ってください。
 
@@ -57,7 +72,8 @@ $ rails server
 $ touch .env
 ```
 次にFacebook、 deviseの変数を入れます。  
-config/initializers/devise.rbにある「config.secret_key」の部分をコメントアウトして、fingerprintを.env ファイルに代入します。
+config/initializers/devise.rbにある「config.secret_key」の部分のコメントアウトをはずして、  
+fingerprintを.env ファイルに代入します。
 
 ```sh
 # /seed_and_growth/.env
@@ -136,7 +152,7 @@ $ heroku open
 もし、エラーが起こっているようでしたら、 **AWS**、 **Facebook**、 または **Devise** の環境変数をもう一度確認してください。
 
 ```sh
-heroku logs
+$ heroku logs
 ```
 
 で確認する方法もあります。 参考にしてください。  
