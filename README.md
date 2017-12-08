@@ -17,6 +17,7 @@ Google slides や YouTube によるiframeのリンクを貼ることで、 オ�
   - Rails (ver: 5.1.4)
   - Atom Editor
   - GitKraken
+  - DBeaver
   - Ubuntu Gnome 16.04 LTS
 
 # 使用している主なGem
@@ -41,28 +42,6 @@ $ git init
 $ git clone https://github.com/ryosk7/seed_and_growth.git
 ```
 
-次に Gemfile に入っている Gem をインストールします。  
-**オプションコマンドの --without production を付けないとエラーが起こることがあります。**
-
-```sh
-$ bundle install --without production
-$ rails db:migrate
-$ git add -A
-$ git commit -m "Hello, Seed and Growth!"
-$ git push origin master
-```
-以上でローカル環境のセットアップは終了です。  
-ブラウザに表示させる時は、 ターミナルに別のタブを開いて、  
-
-```sh
-$ rails server
-```
-とコマンドしてください。（rails s)でも動きます。  
-
-https://localhost:3000 で見ることができます。
-
-# Set up for Heroku
-
 いくつかの環境変数を格納する必要があります。  
 **dotenv-rails gem** を利用することで、環境変数を入れることができます。
 
@@ -75,6 +54,9 @@ $ touch .env
 config/initializers/devise.rbにある「config.secret_key」の部分のコメントアウトをはずして、  
 fingerprintを.env ファイルに代入します。
 
+Facebook の ID と SECRET_KEY は Facebook for Developers から取得してください。
+Facebook for Developers: https://developers.facebook.com/
+
 ```sh
 # /seed_and_growth/.env
 
@@ -86,7 +68,36 @@ APP_SECRET="***********************"
 DEVISE_KEY="***********************"
 ```
 
-次に  Herokuにこのアプリケーションを追加します。  
+次に Gemfile に入っている Gem をインストールします。  
+**オプションコマンドの --without production を付けないとエラーが起こることがあります。**
+
+```sh
+$ bundle install --without production
+$ rails db:migrate
+$ git add -A
+$ git commit -m "Hello, Seed and Growth!"
+$ git push origin master
+```
+以上でローカル環境のセットアップは終了です。 :+1:  
+ブラウザに表示させる時は、 ターミナルに別のタブを開いて、  
+
+```sh
+$ rails server
+```
+とコマンドしてください。（rails s)でも動きます。  
+
+https://localhost:3000 で見ることができます。
+
+Seed and Growth は jQuery を採用しています。  
+もしエラーが出るようでしたら、 yarn でインストールしてください。
+
+```sh
+$ yarn add jquery
+```
+
+# Set up for Heroku
+
+まず、 Herokuにこのアプリケーションを追加します。  
 アカウントをお持ちでない方は、 まずアカウントを作りましょう。  
 Heroku: https://www.heroku.com/
 
