@@ -86,7 +86,7 @@ $ rails server
 ```
 とコマンドしてください。（rails s)でも動きます。  
 
-https://localhost:3000 で見ることができます。
+http://localhost:3000 で見ることができます。
 
 Seed and Growth は jQuery を採用しています。  
 もしエラーが出るようでしたら、 yarn でインストールしてください。
