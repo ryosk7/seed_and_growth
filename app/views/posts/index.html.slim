@@ -1,26 +1,29 @@
-.pc
+.sp
   .main.posts-index
     .container
-      h1.user-index
-        | Ideas
-      hr.user-hr
-        - @posts.each do |post|
-          = link_to post_path(post) do
-            .card style="background-image: linear-gradient(-225deg, rgba(26,158,42,0.6) 0%, rgba(0,36,61,0.6) 50%), url('#{post.picture.url if post.picture?}')"
-              .card-category
+      .row
+        .col-sd-12
+          h1.user-index
+            | Ideas
+          hr.user-hr
+            - @posts.each do |post|
+              = link_to post_path(post) do
+                .card style="background-image: linear-gradient(-225deg, rgba(26,158,42,0.6) 0%, rgba(0,36,61,0.6) 50%), url('#{post.picture.url if post.picture?}')"
+                  .card-category
 
-              .card-description
-                h1
-                  = post.title
-              .container
-                .card-content
-                  p
-                    = post.content
-              .card-user
-                p
-                  = "#{post.user.username}   "
-                  = image_tag(post.user.avatar, class: "avatar-image-mini")
-.sp
+                  .card-description
+                    h1
+                      = post.title
+                  .container
+                    .card-content
+                      p
+                        = post.content
+                  .card-user
+                    p
+                      = "#{post.user.username}   "
+                      = image_tag(post.user.avatar + "?type=large", class: "avatar-image-mini")
+              hr
+.pc
   .main.posts-index
     h1.user-index
       | Ideas

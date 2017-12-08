@@ -33,9 +33,6 @@ body {
   }
 }
 
-/* パソコンで見たときは"pc"のclassがついた画像が表示される */
-.pc { display: block !important; }
-.sp { display: none !important; }
 /* スマートフォンで見たときは"sp"のclassがついた画像が表示される */
 @media only screen and (min-width: 750px) {
   .pc {
@@ -43,7 +40,34 @@ body {
   }
   .sp {
     display: block !important;
-    h1 {
+    .user-index {
+      font-size: 70px;
+    }
+    .card-description {
+      h1 {
+        font-size: 40px;
+      }
+    }
+    .card-user {
+      p {
+        font-size: 20px;
+      }
+      .avatar-image-mini {
+        border-radius: 50%;
+        width: 50px;
+        height: auto;
+      }
+    }
+  }
+}
+/* パソコンで見たときは"pc"のclassがついた画像が表示される */
+@media only screen and (max-width: 1000px) {
+  .sp {
+    display: none !important;
+  }
+  .pc {
+    display: block !important;
+    .user-index {
       font-size: 250px;
     }
     .card-description {
