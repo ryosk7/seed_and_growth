@@ -38,7 +38,7 @@
       = image_tag(@post.user.avatar, class: "avatar-image")
     - if current_user.id == @post.user.id
       hr
-        = link_to '編集', edit_post_path(current_user), class: 'btn-medium'
+        = link_to '編集', edit_post_path(@post.current_user), class: 'btn-medium'
         = link_to '削除', post_path, class: 'btn-medium', method: :delete
     hr
     .first_iframe
