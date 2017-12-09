@@ -1,3 +1,4 @@
+.pc
   nav class="navbar navbar-default"
     div class="container-fluid"
 
@@ -29,6 +30,13 @@
             - else
               li
                 = link_to("ログイン", new_user_session_path, class: "navbar-link")
+
+.sp
+  nav class="navbar navbar-default"
+    div class="container-fluid"
+
+      div class="navbar-header"
+        = link_to("SnG", root_path, class: "navbar-brand")
 
       div class="hidden-md hidden-lg"
         ul class="nav navbar-nav navbar-right"

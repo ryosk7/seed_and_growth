@@ -28,7 +28,7 @@ class PostsController < ApplicationController
   def update
     if @post.update(post_params)
       flash[:info] = "編集しました！"
-      redirect_to posts_path(@post)
+      redirect_to post_path(@post)
     else
       flash[:wanding] = "失敗しました。 もう一度投稿内容を確認してください..."
       render edit_post_path(@post)
