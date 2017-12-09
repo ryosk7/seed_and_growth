@@ -7,7 +7,7 @@
       h1.show-title
         = @post.title
       h2.show-content
-        = @post.content
+        = simple_format(@post.content)
       = link_to(user_path(@post.user))
         = "Created by -- #{@post.user.username}  "
         = image_tag(@post.user.avatar, class: "avatar-image")
