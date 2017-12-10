@@ -39,7 +39,7 @@
     - if current_user.id == @post.user.id
       hr
         = link_to '編集', edit_post_path(@post), class: 'btn-medium'
-        = link_to '削除', post_path, class: 'btn-medium', data: { confirm: 'Are you sure?' }, method: :delete
+        = link_to '削除', post_path, class: 'btn-medium', method: :delete, confirm: 'Are you sure?'
     hr
     .first_iframe
       = @post.first_iframe

@@ -10,7 +10,8 @@
 
 .pc
   .container
-    h1.user-index Users
+    h1.user-index
+      = "#{@users.all.count} Users"
     hr.user-hr
     - @users.each do |user|
       h2.user-index-name

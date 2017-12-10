@@ -4,7 +4,7 @@
       .row
         .col-sd-12
           h1.user-index
-            | Ideas
+            = "#{@posts.all.count} Ideas" 
           hr.user-hr
             - @posts.each do |post|
               = link_to post_path(post) do
