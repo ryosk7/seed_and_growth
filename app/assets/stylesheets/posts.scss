@@ -179,12 +179,103 @@
   .sp {
     display: block !important;
 
+    .footer-discription {
+      font-size: 39px;
+      a {
+        font-size: 39px;
+      }
+    }
+
+    .banner {
+      .sp-banner-content {
+        .sp-container {
+          padding-top: 153px;
+          margin: 0px 20px 0px 20px;
+          h1 {
+            font-size: 109px;
+            margin-top: 0px;
+          }
+          p {
+            font-size: 60px;
+            margin: 47px 10px;
+          }
+        }
+      }
+    }
+
+    .sp-banner-about-1 {
+      .sp-container {
+        margin: 0px 20px 0px 20px;
+        h1 {
+          font-size: 109px;
+          margin-top: 144px;
+          color: #00bd69;
+        }
+        h2 {
+          margin-top: 54px;
+          font-size: 60px;
+          color: #7a7979;
+        }
+        .sng-info {
+          width: 890px;
+          height: auto;
+          margin: 0 auto;
+        }
+      }
+    }
+
+    .btn-treehouse {
+      color: white;
+      padding: 24px 21px;
+      border-radius: 50px;
+      font-size: 61px;
+      font-weight: bold;
+      background: #6AD58B;
+      transition: background 0.3s ease;
+    }
+
     .navbar-default {
       padding-bottom: 0px;
       border-color: #4b390a;
+      .function {
+        border-width: none;
+        background-color: #4b390a;
+        border-color: #4b390a;
+        border-style: solid;
+        .icon-list {
+          border-width: none;
+          text-align: center;
+          padding-left: 179px;
+          margin-bottom: 0px;
+          border-color: #4b390a;
+          li {
+            margin: 30px;
+            display: inline-block;
+            border-color: #4b390a;
+            display: inline-flex;
+            .glyphicon {
+              font-size: 60px;
+              justify-content: space-between;
+            }
+            .glyphicon-list {
+              color: white;
+              margin-right: 40px;
+            }
+            .glyphicon-edit {
+              color: white;
+              margin-right: 40px;
+            }
+            .glyphicon-user {
+              color: white;
+              margin-right: 40px;
+            }
+          }
+        }
+      }
       .container-fluid {
         height: 160px;
         background-color: #4b390a;
+        border-color: #4b390a;
         .avatar-image {
           margin: 15px 30px 10px 0;
           width: 130px;

@@ -40,61 +40,25 @@
 
       div class="hidden-md hidden-lg"
         ul class="nav navbar-nav navbar-right"
-          - if user_signed_in?
-            li.dropdown
-              a.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#" role="button"
+          li
+            - if user_signed_in?
+              = link_to(current_user)
                 = image_tag(current_user.avatar + "?type=large", class: "avatar-image")
-              ul.dropdown-menu
-                li
-                  = link_to("マイページ", current_user)
-                li
-                  = link_to("一覧", posts_path)
-                li
-                  = link_to("投稿", new_post_path(current_user))
-                li
-                  = link_to("Users", users_path)
-                li.divider role="separator"
-                li
-                  = link_to("ログアウト", destroy_user_session_path, method: :delete, class: "navbar-link logout")
-
-          - else
-            li
-              = link_to("ログイン", new_user_session_path, class: "navbar-link")
-
-
-  / * lewagon */
-
-
-  / .navbar-wagon
-  /   /! Logo
-  /   a.navbar-wagon-brand href="/"
-  /     = link_to("Seed and Growth", root_path, class: "navbar-brand")
-  /   /! Right Navigation
-  /   .navbar-wagon-right.hidden-xs.hidden-sm
-  /     = link_to("一覧", posts_path)
-  /     = link_to("投稿", new_post_path(current_user))
-  /     = link_to("Users", users_path)
-  /     /! Profile picture with dropdown list
-  /     .navbar-wagon-item
-  /       .dropdown
-  /         img#navbar-wagon-menu.avatar.dropdown-toggle data-toggle="dropdown" src="#{current_user.avatar}" /
-  /         ul.dropdown-menu.dropdown-menu-right.navbar-wagon-dropdown-menu
-  /           li
-  /             = link_to("マイページ", current_user)
-  /           li
-  /             = link_to("ログアウト", destroy_user_session_path, method: :delete, class: "navbar-link logout")
-  /   /! Dropdown appearing on mobile only
-  /   .navbar-wagon-item.hidden-md.hidden-lg
-  /     .dropdown
-  /       i.fa.fa-bars.dropdown-toggle data-toggle="dropdown"
-  /       ul.dropdown-menu.dropdown-menu-right.navbar-wagon-dropdown-menu
-  /         li
-  /           = link_to("マイページ", current_user)
-  /         li
-  /           = link_to("ログアウト", destroy_user_session_path, method: :delete, class: "navbar-link logout")
-  /         li
-  /           = link_to("一覧", posts_path)
-  /         li
-  /           = link_to("投稿", new_post_path(current_user))
-  /         li
-  /           = link_to("Users", users_path)
+            - else
+              li
+                = link_to("ログイン", new_user_session_path, class: "navbar-link")
+    .function
+      ul.icon-list
+        - if user_signed_in?
+          li
+            = link_to(posts_path)
+              span class="glyphicon glyphicon-list" aria-hidden="true"
+          li
+            = link_to(new_post_path(current_user))
+              span class="glyphicon glyphicon-edit" aria-hidden="true"
+          li
+            = link_to(users_path)
+              span class="glyphicon glyphicon-user" aria-hidden="true"
+          li
+            = link_to(destroy_user_session_path, method: :delete, class: "navbar-link logout")
+              span class="glyphicon glyphicon-log-out" aria-hidden="true"

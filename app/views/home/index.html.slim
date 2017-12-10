@@ -6,24 +6,49 @@
 /       | あなたのアイデアを公開しよう
 /   = link_to 'Start Now', new_user_registration_path, class: 'btn-treehouse'
 
-.banner
-  .banner-content
+.pc
+  .banner
+    .banner-content
+      .container
+        h1.home-mongon
+          | アイデアは成長する
+        p.home-mongon-second
+          | あなたのアイデアを公開しよう
+        = link_to 'Start Now', new_user_registration_path, class: 'btn-treehouse'
+  .banner-about-1
     .container
-      h1.home-mongon
-        | アイデアは成長する
-      p.home-mongon-second
-        | あなたのアイデアを公開しよう
-      = link_to 'Start Now', new_user_registration_path, class: 'btn-treehouse'
-.banner-about-1
-  .container
-    .row
-      .col-md-6.col-xs-12
-        .sng-about
-          h1
-            | Seed and Growth で、 できること
-          h2
-            | 動画やスライドを使ってピッチし，アップロードします．それをサポーターの方々がみて，
-              コメントをしてアドバイスしたり，応援したり，実際に協力することができます．
-              応援したときに支援者として名前が載ります．
-      .col-md-6.col-xs-12
-        = image_tag '/sng_info.png', class: 'sng-info'
+      .row
+        .col-md-6.col-xs-12
+          .sng-about
+            h1
+              | Seed and Growth で、 できること
+            h2
+              | 動画やスライドを使ってピッチし，アップロードします．それをサポーターの方々がみて，
+                コメントをしてアドバイスしたり，応援したり，実際に協力することができます．
+                応援したときに支援者として名前が載ります．
+        .col-md-6.col-xs-12
+          = image_tag '/sng_info.png', class: 'sng-info'
+
+
+.sp
+  .banner
+    .sp-banner-content
+      .sp-container
+        h1.home-mongon
+          | アイデアは成長する
+        p.home-mongon-second
+          | あなたのアイデアを公開しよう
+        = link_to 'Start Now', new_user_registration_path, class: 'btn-treehouse'
+  .sp-banner-about-1
+    .sp-container
+      .row
+        .col-md-6.col-xs-12
+          .sng-about
+            h1
+              | Seed and Growth で、 できること
+            h2
+              | 動画やスライドを使ってピッチし，アップロードします．それをサポーターの方々がみて，
+                コメントをしてアドバイスしたり，応援したり，実際に協力することができます．
+                応援したときに支援者として名前が載ります．
+        .col-md-6.col-xs-12
+          = image_tag '/sng_info.png', class: 'sng-info'
