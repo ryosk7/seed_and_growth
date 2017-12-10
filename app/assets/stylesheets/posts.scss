@@ -152,6 +152,23 @@
   .pc {
     display: block !important;
 
+    .btn-unfollow {
+      width: 200px;
+      height: 50px;
+      font-size: 27px;
+      margin-bottom: 30px;
+    }
+
+    .btn-primary {
+      color: #fff;
+      width: 200px;
+      height: 50px;
+      font-size: 27px;
+      background-color: #337ab7;
+      border-color: #2e6da4;
+      margin-bottom: 30px;
+    }
+
     .user-index-name {
       a {
         font-size: 40px;
@@ -201,6 +218,28 @@
   }
   .sp {
     display: block !important;
+
+    .user-follow {
+      font-size: 113px;
+      text-align: center;
+      margin: 37px 0;
+      color: #00bd69;
+    }
+
+    .btn-unfollow {
+      width: 300px;
+      height: 72px;
+      font-size: 40px;
+    }
+
+    .btn-primary {
+      color: #fff;
+      width: 300px;
+      height: 72px;
+      font-size: 40px;
+      background-color: #337ab7;
+      border-color: #2e6da4;
+    }
 
     .posts-index {
       .sp-container {
@@ -253,14 +292,13 @@
         color: white;
         background-color: #3B5998;
         font-size: 20px;
-        width: 474px;
+        width: 550px;
         margin: 0 auto;
         border-radius: 20px;
       }
       .fa.fa-facebook.fa-2x {
         color: white;
-        padding: 10px 15px;
-        width: 70px;
+        padding: 20px 15px;
         height: auto;
         border-radius: 10px;
         font-size: 50px;
@@ -286,10 +324,11 @@
     .banner {
       .sp-banner-content {
         .sp-container {
-          padding-top: 153px;
-          margin: 0px 20px 0px 20px;
+          padding-top: 68px;
+          margin: 0px 20px;
           h1 {
             font-size: 109px;
+            font-weight: bold;
             margin-top: 0px;
           }
           p {

@@ -1,20 +1,22 @@
 .pc
   .container
-    h1.user-index Following
+    h1.user-index
+      = "#{@user.following.all.count} Following"
     hr.user-hr
     - @user.following.each do |user|
       h2.user-index-name
         = link_to(user_path(user.id))
-          = image_tag(user.avatar, class: "avatar-image-index")
+          = image_tag(user.avatar + "?type=large", class: "avatar-image-index")
           = user.username
           hr
 
 .sp
-  h1.user-index Following
+  h1.user-follow
+    = "#{@user.following.all.count} Following"
   hr.user-hr
   - @user.following.each do |user|
     h2.user-index-name
-      = link_to(user_path(user.id))
-        = image_tag(user.avatar, class: "avatar-image-index")
+      = link_to(user_path(user.id), class: "username")
+        = image_tag(user.avatar + "?type=large", class: "avatar-image-index")
         = user.username
         hr
