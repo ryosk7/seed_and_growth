@@ -14,7 +14,8 @@
           | アイデアは成長する
         p.home-mongon-second
           | あなたのアイデアを公開しよう
-        = link_to 'Start Now', new_user_registration_path, class: 'btn-treehouse'
+        - unless user_signed_in?
+          = link_to 'Start Now', new_user_registration_path, class: 'btn-treehouse'
   .banner-about-1
     .container
       .row
@@ -38,7 +39,8 @@
           | アイデアは成長する
         p.home-mongon-second
           | あなたのアイデアを公開しよう
-        = link_to 'Start Now', new_user_registration_path, class: 'btn-treehouse'
+        - unless user_signed_in?
+          = link_to 'Start Now', new_user_registration_path, class: 'btn-treehouse'
   .sp-banner-about-1
     .sp-container
       .row
