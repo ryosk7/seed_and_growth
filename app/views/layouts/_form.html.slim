@@ -4,16 +4,20 @@
       = message
   = f.hidden_field :user_id
   h3 タイトル
+  br
   = f.text_field :title, class: 'form-control'
   h3 サムネイル画像
+  br
   = f.file_field :picture
   h3 概要
+  br
   = f.text_area :content, class: 'form-control form-content', rows:'2', cols:'20'
   h3 Google スライド / YouTube (URL)
-  p.post-note Google スライドの場合： リンク中のpubをembedに書き換えてください
-  p.post-note YouTubeの場合： 埋め込みからリンクを取ってきてください
+  br
+  p.post-note リンクを取ってきてください
   = f.text_area :first_url, class: 'form-control', rows:'2', cols:'20'
   h3 内容
+  br
   p.post-note エディタが表示されないことがあります。 その時はお手数ですがもう一度リロードしてください。
   p.post-note リロード後に編集内容が消えることはありません。
   = f.cktext_area :article, class: 'ckeditor'

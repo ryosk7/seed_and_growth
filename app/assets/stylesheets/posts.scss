@@ -8,7 +8,7 @@
   font-size: 40px;
   margin-bottom: 40px;
   word-wrap: break-word;
-  color: #b9b8b8;
+  color: #918e8e;
 }
 
 .username {
@@ -151,6 +151,29 @@
   }
   .pc {
     display: block !important;
+
+    .user-index-name {
+      a {
+        font-size: 40px;
+      }
+    }
+
+    .avatar-image-show {
+      border-radius: 50%;
+      margin-left: 150px;
+      width: 100px;
+    }
+
+    .avatar-image {
+      width: 50px;
+      border-radius: 50%;
+    }
+
+    .avatar-image-index {
+      border-radius: 50%;
+      margin-right: 30px;
+    }
+
     .user-index {
       font-size: 70px;
     }
@@ -179,12 +202,182 @@
   .sp {
     display: block !important;
 
+    .posts-index {
+      .sp-container {
+        margin: 60px 30px;
+      }
+    }
+
+    .posts-new {
+      .sp-container {
+        margin: 0 20px 0 20px;
+        .show-title {
+          font-size: 164px;
+        }
+        .show-content {
+          font-size: 100px;
+          margin-bottom: 40px;
+          word-wrap: break-word;
+          color: #918e8e;
+        }
+        a {
+          font-size: 50px;
+          text-decoration: none !important;
+          color: #7a7777;
+        }
+        .btn-list {
+          text-align: center;
+          .btn-edit {
+            margin-right: 40px;
+          }
+          .btn-delete {
+            margin-left: 40px;
+          }
+        }
+      }
+    }
+
+    .sp-container {
+      margin: 300px 10px 0 10px;
+      .login-session {
+        font-size: 142px;
+        margin: 91px 0 20px 0;
+      }
+      .login-session-discription {
+        font-size: 45px;
+        text-align: center;
+        color: #7a7777;
+        margin: 30px 0 100px 0;
+      }
+      .btn-facebook.btn.btn-lg.btn-block {
+        color: white;
+        background-color: #3B5998;
+        font-size: 20px;
+        width: 474px;
+        margin: 0 auto;
+        border-radius: 20px;
+      }
+      .fa.fa-facebook.fa-2x {
+        color: white;
+        padding: 10px 15px;
+        width: 70px;
+        height: auto;
+        border-radius: 10px;
+        font-size: 50px;
+        font-weight: bold;
+        background: #3B5998;
+        transition: background 0.3s ease;
+      }
+      .fa.fa-facebook.fa-2x:hover {
+        opacity: 1;
+        background: #3B5998;
+        text-decoration: none;
+        color: white;
+      }
+    }
+
+    .footer-discription {
+      font-size: 39px;
+      a {
+        font-size: 39px;
+      }
+    }
+
+    .banner {
+      .sp-banner-content {
+        .sp-container {
+          padding-top: 153px;
+          margin: 0px 20px 0px 20px;
+          h1 {
+            font-size: 109px;
+            margin-top: 0px;
+          }
+          p {
+            font-size: 60px;
+            margin: 47px 10px;
+          }
+        }
+      }
+    }
+
+    .sp-banner-about-1 {
+      .sp-container {
+        margin: 0px 20px 0px 20px;
+        h1 {
+          font-size: 109px;
+          margin-top: 144px;
+          color: #00bd69;
+        }
+        h2 {
+          margin-top: 54px;
+          font-size: 60px;
+          color: #7a7979;
+        }
+        .sng-info {
+          width: 890px;
+          height: auto;
+          margin: 0 auto;
+        }
+      }
+    }
+
+    .btn-treehouse {
+      color: white;
+      padding: 24px 21px;
+      border-radius: 50px;
+      font-size: 61px;
+      font-weight: bold;
+      background: #6AD58B;
+      transition: background 0.3s ease;
+    }
+
     .navbar-default {
       padding-bottom: 0px;
       border-color: #4b390a;
+      .navbar-link {
+        color: #d5d4d4;
+        font-size: 50px;
+        margin-top: 60px;
+      }
+      .function {
+        border-width: none;
+        background-color: #4b390a;
+        border-color: #4b390a;
+        border-style: solid;
+        .icon-list {
+          border-width: none;
+          text-align: center;
+          padding-left: 179px;
+          margin-bottom: 0px;
+          border-color: #4b390a;
+          li {
+            margin: 30px;
+            display: inline-block;
+            border-color: #4b390a;
+            display: inline-flex;
+            .glyphicon {
+              font-size: 60px;
+              justify-content: space-between;
+            }
+            .glyphicon-list {
+              color: white;
+              margin-right: 40px;
+            }
+            .glyphicon-edit {
+              color: white;
+              margin-right: 40px;
+            }
+            .glyphicon-user {
+              color: white;
+              margin-right: 40px;
+            }
+          }
+        }
+      }
       .container-fluid {
         height: 160px;
         background-color: #4b390a;
+        border-color: #4b390a;
         .avatar-image {
           margin: 15px 30px 10px 0;
           width: 130px;
@@ -195,6 +388,17 @@
         }
       }
     }
+    .sp-container {
+      margin: 60px 30px;
+    }
+    .user-show {
+      font-size: 100px;
+      text-align: center;
+      color: #3ac162;
+      .sp-container {
+        margin: 60px 30px;
+      }
+    }
     .navbar-brand {
       margin-top: 50px;
       font-size: 100px;
@@ -202,7 +406,7 @@
       font-weight: bold;
     }
     .user-index {
-      font-size: 250px;
+      font-size: 169px;
     }
     .card-description {
       h1 {
@@ -234,16 +438,23 @@
       .avatar-image-show {
         border-radius: 50%;
         margin-left: 0px;
+        width: 230px;
       }
       .user-name-show {
         font-size: 80px;
       }
-      .following-link {
-        font-size: 40px;
-        margin-right: 200px;
-      }
-      .follower-link {
-        font-size: 40px;
+      .follow-line {
+        .followes {
+          margin-top: 60px;
+        }
+        text-align: center;
+        .following-link {
+          font-size: 40px;
+          margin-right: 100px;
+        }
+        .follower-link {
+          font-size: 40px;
+        }
       }
       .follow-list {
         margin: 0 auto;

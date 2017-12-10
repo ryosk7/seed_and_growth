@@ -15,7 +15,7 @@
           br
           - if user_signed_in?
             - unless current_user?(@user)
-              div id="follow_form"
+              #follow_form
               - if current_user.following?(@user)
                 = render 'unfollow'
               - else
@@ -25,8 +25,9 @@
 
           = link_to("フォロワー#{@user.followers.count}人", followers_user_path(@user), class: "follower-link")
       hr.user-hr
-
-      - @user_posts.each do |post|
+      .user-index
+        = "#{@user.posts.count} Ideas"
+      - @user.posts.each do |post|
         = link_to post_path(post) do
           .card style="background-image: linear-gradient(-225deg, rgba(26,158,42,0.6) 0%, rgba(0,36,61,0.6) 50%), url('#{post.picture.url if post.picture?}')"
             .card-category
@@ -41,7 +42,7 @@
             .card-user
               p
                 = "#{post.user.username}   "
-                = image_tag(@user.avatar, class: "avatar-image")
+                = image_tag(@user.avatar + "?type=large", class: "avatar-image")
         hr
 
 .sp
@@ -64,25 +65,26 @@
 
         .follow-line
 
-          .col-xs-12
+          .col-xs-12.followes
 
             = link_to("#{@user.following.count}人をフォロー中", following_user_path(@user), class: "following-link")
 
             = link_to("フォロワー#{@user.followers.count}人", followers_user_path(@user), class: "follower-link")
 
-      hr.user-hr
-
-    - @user_posts.each do |post|
+    hr.user-hr
+    .user-show
+      = "#{@user.posts.count} Ideas"
+    - @user.posts.each do |post|
       = link_to post_path(post) do
-        .card style="background-image: linear-gradient(-225deg, rgba(26,158,42,0.6) 0%, rgba(0,36,61,0.6) 50%), url('#{post.picture.url if post.picture?}')"
-          .card-category
+        .sp-container
+          .card style="background-image: linear-gradient(-225deg, rgba(26,158,42,0.6) 0%, rgba(0,36,61,0.6) 50%), url('#{post.picture.url if post.picture?}')"
+            .card-category
 
-          .card-description
-            h1
-              = post.title
+            .card-description
+              h1
+                = post.title
 
-          .card-user
-            p
-              = "#{post.user.username}   "
-              = image_tag(@user.avatar, class: "avatar-image")
-      hr
+            .card-user
+              p
+                = "#{post.user.username}   "
+                = image_tag(@user.avatar + "?type=large", class: "avatar-image-mini")

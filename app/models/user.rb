@@ -6,12 +6,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable
 
-  has_many :active_relationships, class_name:  "Relationship", foreign_key: "follower_id", dependent: :destroy
-
+  has_many :active_relationships, class_name: Relationship, foreign_key: 'follower_id', dependent: :destroy
   has_many :following, through: :active_relationships, source: :following
-
-  has_many :passive_relationships, class_name: "Relationship", foreign_key: "following_id", dependent: :destroy
-
+  has_many :passive_relationships, class_name: Relationship, foreign_key: 'following_id', dependent: :destroy
   has_many :followers, through: :passive_relationships, source: :follower
 
   def self.find_for_oauth(auth)
@@ -48,7 +45,7 @@ class User < ApplicationRecord
 
   private
 
-  def self.dummy_email(auth)
+  def dummy_email(auth)
     "#{auth.uid}-#{auth.provider}@example.com"
   end
 end
