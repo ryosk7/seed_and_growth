@@ -3,22 +3,37 @@
     .form-error
       = message
   = f.hidden_field :user_id
-  h3 タイトル
+  h3.form-heading タイトル
   br
   = f.text_field :title, class: 'form-control'
-  h3 サムネイル画像
+  h3.form-heading サムネイル画像
+  br
+
+
+  / エラーを吐くため、 一旦コメントアウトしておく
+
+
+  / - if current_page?(edit_post_path)
+  /   p.post-note
+  /     | 画像を新しく選択しない場合、 以前使用した画像が適用されます。
+  /
+  / - else
+  /   p.post-note
+  /     | 画像の選択は必須項目です。
+
   br
   = f.file_field :picture
-  h3 概要
+  h3.form-heading 概要
   br
   = f.text_area :content, class: 'form-control form-content', rows:'2', cols:'20'
-  h3 Google スライド / YouTube (URL)
+  h3.form-heading Google スライド / YouTube (URL)
   br
-  p.post-note リンクを取ってきてください
+  p.post-note シェアリンクを貼ってください。
+  br
+  p.post-note 「Google スライド」は、 ファイル → ウェブに公開 → 公開 をクリックしてリンクをコピーしてください。
   = f.text_area :first_url, class: 'form-control', rows:'2', cols:'20'
-  h3 内容
+  h3.form-heading 内容
   br
-  p.post-note エディタが表示されないことがあります。 その時はお手数ですがもう一度リロードしてください。
-  p.post-note リロード後に編集内容が消えることはありません。
-  = f.cktext_area :article, class: 'ckeditor'
+  p.post-note Markdown形式で書くことができます。
+  = f.text_area :article, class: 'form-control form-article'
   = f.submit class: 'btn-submit'
