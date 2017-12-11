@@ -78,9 +78,7 @@
 }
 
 .show_content {
-  word-wrap: break-word;
-  white-space: normal;
-  display: block;
+  font-size: 50px;
 }
 
 .ckeditor {
@@ -151,6 +149,13 @@
   }
   .pc {
     display: block !important;
+
+    .posts-new {
+      .form-heading {
+        color: #797676;
+      }
+    }
+
     .form-article {
       height: 350px;
     }
@@ -504,8 +509,9 @@
       }
     }
     .posts-new {
-      h3 {
+      .form-heading {
         font-size: 70px;
+        color: #797676;
       }
       .form-control {
         font-size: 40px;

@@ -19,8 +19,8 @@
       .first_iframe
         = @post.first_iframe
       hr
-      h3.show_content
-        = @post.article.html_safe
+      .show_content
+        = markdown(@post.article.html_safe).html_safe
       hr
       = link_to '戻る', posts_path, class: 'btn-medium'
 
@@ -46,8 +46,8 @@
       .first_iframe
         = @post.first_iframe
       hr
-      h3.show_content
-        = simple_format(h(@post.article.html_safe)).html_safe
+      .show_content
+        = markdown(@post.article.html_safe).html_safe
       hr
       = link_to '戻る', posts_path, class: 'btn-medium'
 

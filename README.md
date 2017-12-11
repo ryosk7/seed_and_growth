@@ -32,6 +32,8 @@ Google slides や YouTube によるiframeのリンクを貼ることで、 オ�
   - slim-rails
   - fog
   - dotenv-rails
+  - redcarpet
+  - coderay
 
 # Set up local
 まずは git clone します。  
