@@ -22,8 +22,7 @@
     h1.login-session
       | さぁ、 始めよう
     br
-    p.login-session-discription
-      | ログインには、 Facebookアカウントが必要です。
+    
     .col-md-6.col-sm-6.col-xs-6
     - if devise_mapping.omniauthable?
       - resource_class.omniauth_providers.each do |provider|

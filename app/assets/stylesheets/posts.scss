@@ -150,6 +150,20 @@
   .pc {
     display: block !important;
 
+    .login-session {
+      font-size: 70px;
+      color: #3ac162;
+      text-align: center;
+      margin: 30px;
+    }
+
+    .login-session-discription {
+      font-size: 20px;
+      text-align: center;
+      color: #7a7777;
+      margin: 30px;
+    }
+
     .posts-new {
       .form-heading {
         color: #797676;
@@ -287,8 +301,8 @@
     .sp-container {
       margin: 300px 10px 0 10px;
       .login-session {
-        font-size: 142px;
-        margin: 91px 0 20px 0;
+        font-size: 112px;
+        margin: 288px 0 200px 0;
       }
       .login-session-discription {
         font-size: 45px;
