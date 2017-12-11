@@ -1,6 +1,6 @@
 # Seed and Growth
 
-[![N|Solid](http://res.cloudinary.com/dmzlfjx06/image/upload/c_scale,w_215/v1512675724/IMG_6971_nn0ew3.jpg)](https://sng-beta.herokuapp.com/)
+[![N|Solid](http://res.cloudinary.com/dmzlfjx06/image/upload/c_scale,w_1483/v1512998167/IMG_7007_hoataj.png)
 
 Heroku test site: https://sng-beta.herokuapp.com/  
 

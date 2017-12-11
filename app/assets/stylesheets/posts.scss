@@ -151,6 +151,9 @@
   }
   .pc {
     display: block !important;
+    .form-article {
+      height: 350px;
+    }
 
     .btn-unfollow {
       width: 200px;
@@ -512,6 +515,9 @@
       }
       .form-content {
         height: 180px;
+      }
+      .form-article {
+
       }
       .ckeditor {
         font-size: 40px;
