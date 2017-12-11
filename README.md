@@ -1,6 +1,6 @@
 # Seed and Growth
 
-[![N|Solid](http://res.cloudinary.com/dmzlfjx06/image/upload/c_scale,w_1483/v1512998167/IMG_7007_hoataj.png)
+[![N|Solid](http://res.cloudinary.com/dmzlfjx06/image/upload/c_scale,w_582/v1512998167/IMG_7007_hoataj.png)
 
 Heroku test site: https://sng-beta.herokuapp.com/  
 
@@ -56,7 +56,7 @@ $ touch .env
 config/initializers/devise.rbにある「config.secret_key」の部分のコメントアウトをはずして、  
 fingerprintを.env ファイルに代入します。
 
-Facebook の ID と SECRET_KEY は Facebook for Developers から取得してください。
+Facebook の ID と SECRET_KEY は Facebook for Developers から取得してください。  
 Facebook for Developers: https://developers.facebook.com/
 
 ```sh
