@@ -1,55 +1,111 @@
-.pc
-  .main.posts-new
-    .container
+- if user_signed_in?
+  .pc
+    .main.posts-new
+      .container
+        .card style="background-image: linear-gradient(-225deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 50%),url('#{@post.picture if @post.picture?}')"
+
+        hr
+        h1.show-title
+          = @post.title
+        h2.show-content
+          = simple_format(@post.content)
+        = link_to(user_path(@post.user))
+          = "Created by -- #{@post.user.username}  "
+          = image_tag(@post.user.avatar, class: "avatar-image")
+        - if current_user.id == @post.user.id
+          hr
+            = link_to '編集', edit_post_path(@post), class: 'btn-medium'
+            = link_to '削除', post_path, class: 'btn-medium', method: :delete
+        hr
+        .first_iframe
+          = @post.first_iframe
+        hr
+        .show_content
+          = markdown(@post.article.html_safe).html_safe
+        hr
+        = link_to '戻る', posts_path, class: 'btn-medium'
+- else
+  .pc
+    .main.posts-new
+      .container
+        .card style="background-image: linear-gradient(-225deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 50%),url('#{@post.picture if @post.picture?}')"
+
+        hr
+        h1.show-title
+          = @post.title
+        h2.show-content
+          = simple_format(@post.content)
+        = link_to(user_path(@post.user))
+          = "Created by -- #{@post.user.username}  "
+          = image_tag(@post.user.avatar, class: "avatar-image")
+        hr
+        = link_to new_user_registration_path
+          .signup-for-nonlogged
+            p.signup あなたもアイデアを公開しませんか？
+        hr
+        .first_iframe
+          = @post.first_iframe
+        hr
+        .show_content
+          = markdown(@post.article.html_safe).html_safe
+        hr
+        = link_to '戻る', posts_path, class: 'btn-medium'
+
+
+- if user_signed_in?
+  .sp
+    .main.posts-new
       .card style="background-image: linear-gradient(-225deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 50%),url('#{@post.picture if @post.picture?}')"
 
       hr
-      h1.show-title
-        = @post.title
-      h2.show-content
-        = simple_format(@post.content)
-      = link_to(user_path(@post.user))
-        = "Created by -- #{@post.user.username}  "
-        = image_tag(@post.user.avatar, class: "avatar-image")
-      - if current_user.id == @post.user.id
+      .sp-container
+        h1.show-title
+          = @post.title
+        h2.show-content
+          = @post.content
+        = link_to(user_path(@post.user))
+          = "Created by -- #{@post.user.username}  "
+          = image_tag(@post.user.avatar, class: "avatar-image")
+        - if current_user.id == @post.user.id
+          hr
+          .btn-list
+            = link_to '編集', edit_post_path(@post), class: 'btn-medium btn-edit'
+            = link_to '削除', post_path, class: 'btn-medium btn-delete', method: :delete, confirm: 'Are you sure?'
         hr
-          = link_to '編集', edit_post_path(@post), class: 'btn-medium'
-          = link_to '削除', post_path, class: 'btn-medium', method: :delete
-      hr
-      .first_iframe
-        = @post.first_iframe
-      hr
-      .show_content
-        = markdown(@post.article.html_safe).html_safe
-      hr
-      = link_to '戻る', posts_path, class: 'btn-medium'
-
-.sp
-  .main.posts-new
-    .card style="background-image: linear-gradient(-225deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 50%),url('#{@post.picture if @post.picture?}')"
-
-    hr
-    .sp-container
-      h1.show-title
-        = @post.title
-      h2.show-content
-        = @post.content
-      = link_to(user_path(@post.user))
-        = "Created by -- #{@post.user.username}  "
-        = image_tag(@post.user.avatar, class: "avatar-image")
-      - if current_user.id == @post.user.id
+        .first_iframe
+          = @post.first_iframe
         hr
-        .btn-list
-          = link_to '編集', edit_post_path(@post), class: 'btn-medium btn-edit'
-          = link_to '削除', post_path, class: 'btn-medium btn-delete', method: :delete, confirm: 'Are you sure?'
+        .show_content
+          = markdown(@post.article.html_safe).html_safe
+        hr
+        = link_to '戻る', posts_path, class: 'btn-medium'
+- else
+  .sp
+    .main.posts-new
+      .card style="background-image: linear-gradient(-225deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 50%),url('#{@post.picture if @post.picture?}')"
+
       hr
-      .first_iframe
-        = @post.first_iframe
-      hr
-      .show_content
-        = markdown(@post.article.html_safe).html_safe
-      hr
-      = link_to '戻る', posts_path, class: 'btn-medium'
+      .sp-container
+        h1.show-title
+          = @post.title
+        h2.show-content
+          = @post.content
+        = link_to(user_path(@post.user))
+          = "Created by -- #{@post.user.username}  "
+          = image_tag(@post.user.avatar, class: "avatar-image")
+        hr
+        = link_to new_user_registration_path
+          .signup-for-nonlogged
+            p.signup あなたもアイデアを公開しませんか？
+        hr
+        .first_iframe
+          = @post.first_iframe
+        hr
+        .show_content
+          = markdown(@post.article.html_safe).html_safe
+        hr
+        = link_to '戻る', posts_path, class: 'btn-medium'
+
 
 
 / <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQnXb-HxDy6qwxfWSru4jmwDheKdiQzmtcpWvY9zUpOynpfhymbHwnopkT1cy5QiRgmA9ky3zq5JiKG/pub?start=false&amp;loop=false&amp;delayms=3000" webkitallowfullscreen="true" width="1280" allowfullscreen="true" frameborder="0" height="749" mozallowfullscreen="true" ></iframe>

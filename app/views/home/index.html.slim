@@ -24,11 +24,27 @@
             h1
               | Seed and Growth で、 できること
             h2
-              | 動画やスライドを使ってピッチし，アップロードします．それをサポーターの方々がみて，
-                コメントをしてアドバイスしたり，応援したり，実際に協力することができます．
-                応援したときに支援者として名前が載ります．
+              | 動画やスライドを使ってピッチし、 アップロードします。 それをサポーターの方々がみて、
+                コメントをしてアドバイスしたり、 応援したり、 実際に協力することができます。
+                応援したときに支援者として名前が載ります。
         .col-md-6.col-xs-12
           = image_tag '/sng_info.png', class: 'sng-info'
+
+
+  .banner-about-2
+    .container
+      .row
+        .col-md-6.col-xs-12
+          = image_tag '/sng-ad.png', class: 'sng-ad'
+        .col-md-6.col-xs-12
+          .sng-about
+            h1
+              | アイデアが気になりますか？
+            h2
+              | 面白いアイデアがあるかもしれません。 覗いてみましょう。
+            = link_to posts_path
+              .signup-for-nonlogged
+                p.signup Ideas listをみてみる
 
 
 .sp
@@ -52,8 +68,24 @@
             h1
               | Seed and Growth で、 できること
             h2
-              | 動画やスライドを使ってピッチし，アップロードします．それをサポーターの方々がみて，
-                コメントをしてアドバイスしたり，応援したり，実際に協力することができます．
-                応援したときに支援者として名前が載ります．
+              | 動画やスライドを使ってピッチし、 アップロードします。 それをサポーターの方々がみて、
+                コメントをしてアドバイスしたり、 応援したり、 実際に協力することができます。
+                応援したときに支援者として名前が載ります。
         .col-md-6.col-xs-12
           = image_tag '/sng_info.png', class: 'sng-info'
+
+
+  .sp-banner-about-2
+    .sp-container
+      .row
+        .col-md-6.col-xs-12
+          .sng-about
+            h1
+              | アイデアが気になりますか？
+            h2
+              | 面白いアイデアがあるかもしれません。 覗いてみましょう。
+            = link_to posts_path
+              .signup-for-nonlogged
+                p.signup Ideas listをみてみる
+        .col-md-6.col-xs-12
+          = image_tag '/sng-ad.png', class: 'sng-ad'

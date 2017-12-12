@@ -1,12 +1,17 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: %i[show edit update destroy]
+  before_action :set_post, only: %i[edit update destroy]
 
   def index
     @posts = Post.all
   end
 
   def show
-    @post = Post.find_by(id: params[:id])
+    if user_signed_in?
+      @post = current_user.posts.find_by(id: params[:id])
+      @post = Post.find_by(id: params[:id])
+    else
+      @post = Post.find_by(id: params[:id])
+    end
   end
 
   def new
