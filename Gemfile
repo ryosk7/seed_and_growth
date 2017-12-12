@@ -7,6 +7,7 @@ end
 
 gem 'rails', '~> 5.1.4'
 
+gem 'meta-tags'
 gem 'redcarpet', '~> 2.3.0'
 gem 'coderay'
 gem 'materialize-sass'

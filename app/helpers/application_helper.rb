@@ -41,4 +41,25 @@ module ApplicationHelper
       markdown = Redcarpet::Markdown.new(html_render, options)
       markdown.render(text)
   end
+
+  def default_meta_tags
+    {
+      title:       "Seed and Growth",
+      description: "アイデアは成長する",
+      keywords:    "Ruby,Meta,Tags",
+      icon: image_url("https://res.cloudinary.com/dmzlfjx06/image/upload/v1513079672/icon_qjz9ww.png"), # favicon
+      noindex: ! Rails.env.production?, # production環境以外はnoindex
+      charset: "UTF-8",
+      # OGPの設定
+      og: {
+        title: "Seed and Growth",
+        type: "website",
+        url: request.original_url,
+        image: image_url("https://res.cloudinary.com/dmzlfjx06/image/upload/v1512998167/IMG_7007_hoataj.png"),
+        site_name: "Seed and Growth",
+        description: "アイデアは成長する",
+        locale: "ja_JP"
+      }
+    }
+  end
 end

@@ -1,3 +1,5 @@
+- set_meta_tags title: 'signup page'
+
 = bootstrap_devise_error_messages!
 .pc
   .container
@@ -22,7 +24,7 @@
     h1.login-session
       | さぁ、 始めよう
     br
-    
+
     .col-md-6.col-sm-6.col-xs-6
     - if devise_mapping.omniauthable?
       - resource_class.omniauth_providers.each do |provider|
