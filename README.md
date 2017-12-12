@@ -2,6 +2,8 @@
 
 [![N|Solid](http://res.cloudinary.com/dmzlfjx06/image/upload/c_scale,w_582/v1512998167/IMG_7007_hoataj.png)
 
+Seed and Growth: https://www.sng.tokyo
+
 Heroku test site: https://sng-beta.herokuapp.com/  
 
 **ログインにはFacebookアカウントが必要です**
