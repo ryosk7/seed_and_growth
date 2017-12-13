@@ -7,8 +7,9 @@ class PostsController < ApplicationController
 
   def show
     if user_signed_in?
-      @post = current_user.posts.find_by(id: params[:id])
-      @post = Post.find_by(id: params[:id])
+      @post = Post.find(params[:id])
+      @comment = Comment.new
+      @user = User.find_by(id: @post.user_id)
     else
       @post = Post.find_by(id: params[:id])
     end

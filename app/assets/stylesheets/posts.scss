@@ -188,6 +188,31 @@
       height: 350px;
     }
 
+    .form-comment {
+      height: 130px;
+      font-size: 35px;
+    }
+
+    .comment-note {
+      font-size: 26px;
+      font-weight: bold;
+      color: #5383da;
+    }
+
+    .comment-content {
+      font-size: 33px;
+      word-wrap: break-word;
+      color: #918e8e;
+    }
+
+    .user-info {
+      text-align: center;
+      .comment-user {
+        font-size: 20px;
+        color: #918e8e;
+      }
+    }
+
     .btn-unfollow {
       width: 200px;
       height: 50px;
