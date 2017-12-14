@@ -105,6 +105,33 @@
         .show_content
           = markdown(@post.article.html_safe).html_safe
         hr
+
+        = form_for([@post, @comment]) do |f|
+
+          h3.comment-title #{@post.comments.count} Comments
+          br
+          p.comment-note コメントを書いて応援しましょう！
+          = f.text_area :content, class: 'form-comment-sp'
+          .btn-position
+            = f.submit class: 'comment-btn-submit'
+
+        - @post.comments.each do |comment|
+          hr.comment-hr
+          .sp-container
+            .row
+              .col-xs-8
+                h3.comment-content
+                  = simple_format(comment.content)
+              .col-xs-4
+                = link_to(user_path(comment.user))
+                  .user-info
+                    p.comment-user
+                    = comment.user.username
+                    = image_tag(comment.user.avatar, class: "sp-comment-avatar-image")
+
+
+        hr
+
         = link_to '戻る', posts_path, class: 'btn-medium'
 - else
   .sp
