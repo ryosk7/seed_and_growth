@@ -2,8 +2,10 @@ Rails.application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
   # コールバック用URL
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
-  
-  resources :posts
+
+  resources :posts do
+    resources :comments
+  end
   resources :users do
     member do
       get :following, :followers
