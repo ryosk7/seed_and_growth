@@ -14,15 +14,31 @@
         = link_to(user_path(@post.user))
           = "Created by -- #{@post.user.username}  "
           = image_tag(@post.user.avatar, class: "avatar-image")
-        - if Like.find_by(user_id: current_user.id , post_id: @post.id)
-          = link_to("いいね済み" , post_like_path(@post) , {method: "delete"})
-        - else
-          = link_to("いいね" , post_likes_path(@post) , {method: "post"})
+        br
+        .keep-line
+          - unless current_user.id == @post.user.id
+            - if Like.find_by(user_id: current_user.id , post_id: @post.id)
+              = link_to(post_like_path(@post), method: :delete)
+                .keep-btn
+                  h3.unkeep-icon UnSupport
+                  = fa_icon 'remove 3x', class: "unkeep-icon"
+            - else
+              = link_to(post_likes_path(@post), method: :post)
+                .keep-btn
+                  h3.keep-icon Support!
+                  = fa_icon 'plus 3x', class: "keep-icon"
+          h3.keeper-count
+            = "#{Like.where(post_id: @post.id).count} Supporter"
+          .keeper-image
+            - @post.likes.each do |like|
+              - User.where(id: like.user_id).each do |user|
+                = link_to(user_path(user))
+                  = image_tag(user.avatar + "?type=large", class: "avatar-image-keeper")
+
         - if current_user.id == @post.user.id
           hr
             = link_to '編集', edit_post_path(@post), class: 'btn-medium'
             = link_to '削除', post_path, class: 'btn-medium', method: :delete
-            = Like.where(post_id: @post.id).count
         hr
         .first_iframe
           = @post.first_iframe
@@ -74,6 +90,14 @@
         = link_to new_user_registration_path
           .signup-for-nonlogged
             p.signup あなたもアイデアを公開しませんか？
+        .keep-line
+          h3.keeper-count
+            = "#{Like.where(post_id: @post.id).count} Supporter"
+          .keeper-image
+            - @post.likes.each do |like|
+              - User.where(id: like.user_id).each do |user|
+                = link_to(user_path(user))
+                  = image_tag(user.avatar + "?type=large", class: "avatar-image-keeper")
         hr
         .first_iframe
           = @post.first_iframe

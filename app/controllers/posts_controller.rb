@@ -6,6 +6,7 @@ class PostsController < ApplicationController
   end
 
   def show
+    @posts = Post.all
     if user_signed_in?
       @post = Post.find(params[:id])
       @comment = Comment.new

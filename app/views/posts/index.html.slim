@@ -19,7 +19,7 @@
                   .container
                     .card-content
                       p
-                        = post.content
+                        = simple_format(post.content)
                   .card-user
                     p
                       = "#{post.user.username}   "
