@@ -28,7 +28,7 @@
                   h3.keep-icon Support!
                   = fa_icon 'plus 3x', class: "keep-icon"
           h3.keeper-count
-            = "#{Like.where(post_id: @post.id).count} Supporter"
+            = "#{liked_user.count} Supporter"
           .keeper-image
             - @post.likes.each do |like|
               - User.where(id: like.user_id).each do |user|
@@ -92,7 +92,7 @@
             p.signup あなたもアイデアを公開しませんか？
         .keep-line
           h3.keeper-count
-            = "#{Like.where(post_id: @post.id).count} Supporter"
+            = "#{liked_user.count} Supporter"
           .keeper-image
             - @post.likes.each do |like|
               - User.where(id: like.user_id).each do |user|
