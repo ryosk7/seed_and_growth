@@ -7,6 +7,8 @@ end
 
 gem 'rails', '~> 5.1.4'
 
+
+gem 'google-analytics-rails'
 gem 'font-awesome-rails'
 gem 'meta-tags'
 gem 'redcarpet', '~> 2.3.0'
