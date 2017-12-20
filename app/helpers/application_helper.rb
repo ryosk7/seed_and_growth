@@ -62,4 +62,10 @@ module ApplicationHelper
       }
     }
   end
+
+  def liked_user
+    Post.find_by(id: params[:id]).likes.each do |like|
+      User.where(id: like.user_id)
+    end
+  end
 end

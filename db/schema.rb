@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171213050011) do
+ActiveRecord::Schema.define(version: 20171217081251) do
 
   create_table "ckeditor_assets", force: :cascade do |t|
     t.string "data_file_name", null: false
@@ -32,6 +32,15 @@ ActiveRecord::Schema.define(version: 20171213050011) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "likes", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "post_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_likes_on_post_id"
+    t.index ["user_id"], name: "index_likes_on_user_id"
+  end
+
   create_table "posts", force: :cascade do |t|
     t.text "content"
     t.datetime "created_at", null: false
@@ -51,6 +60,24 @@ ActiveRecord::Schema.define(version: 20171213050011) do
     t.index ["follower_id", "following_id"], name: "index_relationships_on_follower_id_and_following_id", unique: true
     t.index ["follower_id"], name: "index_relationships_on_follower_id"
     t.index ["following_id"], name: "index_relationships_on_following_id"
+  end
+
+  create_table "supporters", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "post_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_supporters_on_post_id"
+    t.index ["user_id"], name: "index_supporters_on_user_id"
+  end
+
+  create_table "supports", force: :cascade do |t|
+    t.integer "user_id_id"
+    t.integer "post_id_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_id_id"], name: "index_supports_on_post_id_id"
+    t.index ["user_id_id"], name: "index_supports_on_user_id_id"
   end
 
   create_table "users", force: :cascade do |t|
