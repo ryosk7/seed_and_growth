@@ -24,6 +24,13 @@ html
       }
       else {
         ga('create', 'UA-111472806-1', 'auto');
+        // ga('set', 'dimension1', ga.getAll()[0].get('clientId'));
+        var clientId = ga(function(tracker) {
+          var clientId = tracker.get('clientId');
+          return clientId
+        });
+
+        ga('set', 'dimension1', clientId)
       }
 
       ga('send', 'pageview');
