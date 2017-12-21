@@ -10,6 +10,24 @@ html
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
     = analytics_init if Rails.env.production?
+    javascript:
+      var GA_LOCAL_STORAGE_KEY = 'ga:clientId';
+
+      if (window.localStorage) {
+        ga('create', 'UA-111472806-1', {
+          'storage': 'none',
+          'clientId': localStorage.getItem(GA_LOCAL_STORAGE_KEY)
+        });
+        ga(function(tracker) {
+          localStorage.setItem(GA_LOCAL_STORAGE_KEY, tracker.get('clientId'));
+        });
+      }
+      else {
+        ga('create', 'UA-111472806-1', 'auto');
+      }
+
+      ga('send', 'pageview');
+
   body
     = render "layouts/header"
 
