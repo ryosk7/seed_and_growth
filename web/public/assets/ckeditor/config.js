@@ -1,1 +1,0 @@
-CKEDITOR.config.width="100%",CKEDITOR.config.height="400px";
